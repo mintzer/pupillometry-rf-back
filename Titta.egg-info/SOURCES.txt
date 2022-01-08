@@ -1,0 +1,14 @@
+LICENSE.md
+README.md
+setup.py
+Titta.egg-info/PKG-INFO
+Titta.egg-info/SOURCES.txt
+Titta.egg-info/dependency_links.txt
+Titta.egg-info/top_level.txt
+titta/TalkToProLab.py
+titta/TalkToProLab_dummy.py
+titta/Titta.py
+titta/Tobii.py
+titta/Tobii_dummy.py
+titta/__init__.py
+titta/helpers_tobii.py
