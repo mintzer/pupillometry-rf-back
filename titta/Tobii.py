@@ -22,6 +22,7 @@ from collections import deque
 import pandas as pd
 import copy
 import sys
+import time
 import warnings
 
 if sys.version_info[0] == 3: # if Python 3:
@@ -130,6 +131,7 @@ class myTobii(object):
         # header / column names
         self.header = ['device_time_stamp',
                  'system_time_stamp',
+                    'UTC',
                  'left_gaze_point_on_display_area_x',
                  'left_gaze_point_on_display_area_y',
                  'left_gaze_point_in_user_coordinate_system_x',
@@ -1747,6 +1749,7 @@ class myTobii(object):
             if self.store_data:
                 gdata = (callback_object['device_time_stamp'],
                          callback_object['system_time_stamp'],
+                         time.time(),
                          callback_object['left_gaze_point_on_display_area'][0],
                          callback_object['left_gaze_point_on_display_area'][1],
                          callback_object['left_gaze_point_in_user_coordinate_system'][0],
