@@ -75,7 +75,7 @@ def update_log(logger, log_data):
     if logger == 'events':
         events_df = events_df.append(log_data, ignore_index=True)
     if logger == 'vars':
-        events_df = events_df.append(log_data, ignore_index=True)
+        vars_df = vars_df.append(log_data, ignore_index=True)
 
 
 def now_time():
@@ -163,8 +163,8 @@ def stop_and_save_logs():
     #df.to_csv(settings.FILENAME[:-4] + timestamp + '.csv', sep=',')
 
     #df_msg = pd.DataFrame(msg_data, columns=['system_time_stamp', 'msg'])
-    events_df.to_csv(LOG_FOLDER_PATH + settings.FILENAME[:-4] + timestamp + 'events.csv', sep=',', index = False)
-    vars_df.to_csv(LOG_FOLDER_PATH + settings.FILENAME[:-4] + timestamp + 'vars.csv', sep=',', index = False)
+    events_df.to_csv(LOG_FOLDER_PATH + settings.FILENAME[:-4] + timestamp + '_events.csv', sep=',', index = False)
+    vars_df.to_csv(LOG_FOLDER_PATH + settings.FILENAME[:-4] + timestamp + '_vars.csv', sep=',', index = False)
     #df_msg.to_csv(settings.FILENAME[:-4] + '_msg' + timestamp + '.csv', sep='\t')
 
     tbi_file = LogsConversion(LOG_FOLDER_PATH + settings.FILENAME[:-4] + timestamp + '.csv')

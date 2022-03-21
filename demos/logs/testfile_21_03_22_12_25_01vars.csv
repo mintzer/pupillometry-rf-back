@@ -1,0 +1,8 @@
+border color,figure,is_color_change,is_figure_change,session_num,trial_id
+red,Y,0.0,0.0,1.0,1
+blue,Y,1.0,1.0,1.0,2
+red,X,1.0,1.0,1.0,3
+red,X,1.0,1.0,1.0,4
+red,X,1.0,1.0,1.0,5
+red,X,1.0,1.0,1.0,6
+red,X,1.0,1.0,1.0,7
