@@ -158,7 +158,7 @@ def stop_and_save_logs():
 
     #  Save data and messages
     df = pd.DataFrame(gaze_data, columns=tracker.header)
-    df['UTC'] = str(1000 * (df['UTC'] - start_time))
+    df['UTC'] = df['UTC'].apply(lambda x: str(1000 * (x - start_time)))
     df.to_csv(LOG_FOLDER_PATH + settings.FILENAME[:-4] + timestamp + '.csv', sep=',', index = False)
     #df.to_csv(settings.FILENAME[:-4] + timestamp + '.csv', sep=',')
 

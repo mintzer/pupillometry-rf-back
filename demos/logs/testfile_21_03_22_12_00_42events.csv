@@ -1,0 +1,16 @@
+Event,RecordingTimestamp,border color,figure,is_color_change,is_figure_change,session_num,trial_id
+TRIALID,31171.355962753296,,,,,,
+!E TRIAL_EVENT_VAR fixation,31429.357767105103,,,,,,
+!E TRIAL_EVENT_VAR stimulus_onset,32439.400672912598,,,,,,
+,,red,X,False,False,1.0,1
+TRIAL_END,33445.41311264038,,,,,,
+TRIALID,33447.413206100464,,,,,,
+!E TRIAL_EVENT_VAR fixation,33452.41284370422,,,,,,
+!E TRIAL_EVENT_VAR stimulus_onset,34460.42537689209,,,,,,
+,,blue,X,False,True,1.0,2
+TRIAL_END,35466.40682220459,,,,,,
+TRIALID,35468.40691566467,,,,,,
+!E TRIAL_EVENT_VAR fixation,35473.40774536133,,,,,,
+!E TRIAL_EVENT_VAR stimulus_onset,36483.45065116882,,,,,,
+,,red,Y,True,True,1.0,3
+TRIAL_END,37488.43550682068,,,,,,

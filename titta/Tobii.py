@@ -131,7 +131,7 @@ class myTobii(object):
         # header / column names
         self.header = ['device_time_stamp',
                  'system_time_stamp',
-                    'UTC',
+                'UTC',
                  'left_gaze_point_on_display_area_x',
                  'left_gaze_point_on_display_area_y',
                  'left_gaze_point_in_user_coordinate_system_x',
