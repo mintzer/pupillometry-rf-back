@@ -16,6 +16,7 @@ events_df = pd.DataFrame()
 start_time = time.time()
 
 # %%  Monitor/geometry
+SESSIONS = 1
 MY_MONITOR = 'testMonitor'  # needs to exists in PsychoPy monitor center
 FULLSCREEN = True
 SCREEN_RES = [1920, 1080]
@@ -79,15 +80,16 @@ def update_log(logger, log_data):
 
 
 def now_time():
-    return str(1000 * (time.time() - start_time))
-
+    return str(round(1000 * (time.time() - start_time), 3))
 
 # main loop
 def main_loop(session_num):
     global events_df, vars_df, start_time
-
+    visual.TextStim(win, height=2.5, text=f"welcome to session #{session_num + 1}!").draw()
+    win.flip()
+    core.wait(1)
     go = True
-    num = 1
+    num = 0
     last_color = ''
     last_figure = ''
     color_change = False
@@ -122,18 +124,21 @@ def main_loop(session_num):
                               'RecordingTimestamp': now_time()})
         core.wait(1)
 
+        win.flip()
+        update_log('events', {'Event': '!E TRIAL_EVENT_VAR stimulus_offset',
+                              'RecordingTimestamp': now_time()})
         if color == 'red':
             last_red = figure
         if num != 1:
             if random.randint(1,10) == 10:
                 go = False
 
-        update_log('vars',{'trial_id': str(num),
+        update_log('vars', {'trial_id': str(num),
                            'figure': figure,
-                           'border color': color,
+                           'border_color': color,
                            'is_color_change': color_change,
                            'is_figure_change': figure_change,
-                           'session_num': session_num})
+                           'session': f's_{session_num}'})
 
         update_log('events',{
             'Event': 'TRIAL_END',
@@ -158,7 +163,7 @@ def stop_and_save_logs():
 
     #  Save data and messages
     df = pd.DataFrame(gaze_data, columns=tracker.header)
-    df['UTC'] = df['UTC'].apply(lambda x: str(1000 * (x - start_time)))
+    df['UTC'] = df['UTC'].apply(lambda x: str(round(1000 * (x - start_time), 3)))
     df.to_csv(LOG_FOLDER_PATH + settings.FILENAME[:-4] + timestamp + '.csv', sep=',', index = False)
     #df.to_csv(settings.FILENAME[:-4] + timestamp + '.csv', sep=',')
 
@@ -173,8 +178,12 @@ def stop_and_save_logs():
 
 def main():
     global tracker
+    visual.TextStim(win, height=2.5, text=f"welcome to the experiment!\n...").draw()
+    win.flip()
+    core.wait(1)
     connect_and_calibrate()
-    main_loop(1)
+    for i in range(SESSIONS):
+        main_loop(i)
     stop_and_save_logs()
 
 

@@ -1,0 +1,8 @@
+border_color,figure,is_color_change,is_figure_change,trial_id
+red,Y,FALSE,FALSE,0
+blue,Y,TRUE,TRUE,1
+red,X,TRUE,TRUE,2
+red,X,TRUE,TRUE,3
+red,X,TRUE,TRUE,4
+red,X,TRUE,TRUE,5
+red,X,TRUE,TRUE,6

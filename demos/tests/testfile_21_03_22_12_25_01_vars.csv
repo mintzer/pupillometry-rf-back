@@ -1,0 +1,8 @@
+border_color,figure,is_color_change,is_figure_change,session,trial_id
+red,Y,FALSE,FALSE,s_1,0
+blue,Y,TRUE,TRUE,s_1,1
+red,X,TRUE,TRUE,s_1,2
+red,X,TRUE,TRUE,s_1,3
+red,X,TRUE,TRUE,s_1,4
+red,X,TRUE,TRUE,s_1,5
+red,X,TRUE,TRUE,s_1,6
