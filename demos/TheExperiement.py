@@ -116,8 +116,8 @@ def main_loop(session_num):
                              'RecordingTimestamp': now_time()})
         core.wait(1)
 
-        visual.TextStim(win, height=2.5, text=figure).draw()
-        visual.Rect(win, size=(3,3), lineColor=color).draw()
+        visual.TextStim(win, height=3.5, text=figure, color=color).draw()
+        visual.Rect(win, size=(4,4), lineColor=color).draw()
         #print(time.time())
         win.flip()
         update_log('events', {'Event': '!E TRIAL_EVENT_VAR stimulus_onset',
