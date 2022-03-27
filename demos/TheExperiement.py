@@ -16,7 +16,7 @@ events_df = pd.DataFrame()
 start_time = time.time()
 
 # %%  Monitor/geometry
-SESSIONS = 1
+SESSIONS = 2
 MY_MONITOR = 'testMonitor'  # needs to exists in PsychoPy monitor center
 FULLSCREEN = True
 SCREEN_RES = [1920, 1080]
