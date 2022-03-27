@@ -195,6 +195,7 @@ def stop_and_save_logs():
     vars_df['is_update'] = vars_df['is_update'].map({True: 'TRUE', False: 'FALSE'})
     vars_df.to_csv(LOG_FOLDER_PATH + settings.FILENAME[:-4] + timestamp + '_vars.csv', sep=',', index = False)
     #df_msg.to_csv(settings.FILENAME[:-4] + '_msg' + timestamp + '.csv', sep='\t')
+    input_df['is_correct'] = input_df['is_correct'].map({True: 'TRUE', False: 'FALSE'})
     input_df.to_csv(LOG_FOLDER_PATH + settings.FILENAME[:-4] + timestamp + '_user_inputs.csv', sep=',', index=False)
     tbi_file = LogsConversion(LOG_FOLDER_PATH + settings.FILENAME[:-4] + timestamp + '.csv')
     tbi_file.convert().save()
