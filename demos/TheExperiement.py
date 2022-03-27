@@ -16,7 +16,7 @@ events_df = pd.DataFrame()
 start_time = time.time()
 
 # %%  Monitor/geometry
-SESSIONS = 4
+BLOCKS = 4
 MY_MONITOR = 'testMonitor'  # needs to exists in PsychoPy monitor center
 FULLSCREEN = True
 SCREEN_RES = [1920, 1080]
@@ -83,9 +83,9 @@ def now_time():
     return str(round(1000 * (time.time() - start_time), 3))
 
 # main loop
-def main_loop(session_num):
+def main_loop(block_num):
     global events_df, vars_df, start_time
-    visual.TextStim(win, height=2.5, text=f"welcome to session #{session_num + 1}!").draw()
+    visual.TextStim(win, height=2.5, text=f"welcome to block #{block_num + 1}!\nReminder: keep in your mind the last red figure").draw()
     win.flip()
     core.wait(3)
     go = True
@@ -108,7 +108,7 @@ def main_loop(session_num):
             color_change = True
         last_color = color
 
-        if num == 1:
+        if num == 0:
             color = 'red'
         fixation_point.draw()
         win.flip()
@@ -138,7 +138,7 @@ def main_loop(session_num):
                            'border_color': color,
                            'is_color_change': color_change,
                            'is_figure_change': figure_change,
-                           'session': f's_{session_num}'})
+                           'block': f's_{block_num}'})
 
         update_log('events',{
             'Event': 'TRIAL_END',
@@ -146,6 +146,11 @@ def main_loop(session_num):
 
         num += 1
 
+    visual.TextStim(win, height=2.5, text=f"What is the last red figure shown?").draw()
+    # add input from user
+    # drop block when user got wrong answer
+    win.flip()
+    core.wait(3)
 def stop_and_save_logs():
     global tracker, start_time
     win.flip()
@@ -180,11 +185,11 @@ def stop_and_save_logs():
 
 def main():
     global tracker
-    visual.TextStim(win, height=2.5, text=f"welcome to the experiment!\n...").draw()
+    visual.TextStim(win, height=2.5, text=f"welcome to the experiment!\nAlways keep in your mind the last red figure").draw()
     win.flip()
     core.wait(3)
     connect_and_calibrate()
-    for i in range(SESSIONS):
+    for i in range(BLOCKS):
         main_loop(i)
     stop_and_save_logs()
 
