@@ -1,9 +1,10 @@
+# coding: utf-8
 # Import relevant modules
 import pickle
 import random
 
 import pandas as pd
-from psychopy import visual, monitors, core
+from psychopy import visual, monitors, core, event
 from titta import Titta, helpers_tobii as helpers
 import time
 from logs_convertion import LogsConversion
@@ -13,10 +14,11 @@ global tracker
 
 vars_df = pd.DataFrame()
 events_df = pd.DataFrame()
+input_df = pd.DataFrame()
 start_time = time.time()
 
 # %%  Monitor/geometry
-BLOCKS = 4
+BLOCKS = 1
 MY_MONITOR = 'testMonitor'  # needs to exists in PsychoPy monitor center
 FULLSCREEN = True
 SCREEN_RES = [1920, 1080]
@@ -72,28 +74,34 @@ def connect_and_calibrate():
     tracker.start_recording(gaze_data=True, store_data=True)
 
 def update_log(logger, log_data):
-    global events_df, vars_df
+    global events_df, vars_df, input_df
     if logger == 'events':
         events_df = events_df.append(log_data, ignore_index=True)
     if logger == 'vars':
         vars_df = vars_df.append(log_data, ignore_index=True)
+    if logger == 'input':
+        input_df = input_df.append(log_data, ignore_index=True)
 
 
 def now_time():
-    return str(round(1000 * (time.time() - start_time), 3))
+    return str(round(1000 * (time.time() - start_time)))
 
 # main loop
 def main_loop(block_num):
     global events_df, vars_df, start_time
-    visual.TextStim(win, height=2.5, text=f"welcome to block #{block_num + 1}!\nReminder: keep in your mind the last red figure").draw()
+    visual.TextStim(win,
+                    text=f"ברוכה הבאה לבלוק מספר {block_num + 1}!\nתזכורת: בכל רגע נתון תצטרכי לזכור\nמה היא האות האחרונה\nשהופיעה בצבע אדום\n\nלחצי על כל כפתור כדי להמשיך",
+                    languageStyle='RTL').draw()
     win.flip()
-    core.wait(3)
+    event.waitKeys()
     go = True
     num = 0
     last_color = ''
     last_figure = ''
+    last_red = ''
     color_change = False
     figure_change = False
+    update = False
     while go:
         update_log('events', {'Event': 'TRIALID',
                               'RecordingTimestamp': now_time()})
@@ -116,8 +124,8 @@ def main_loop(block_num):
                              'RecordingTimestamp': now_time()})
         core.wait(1)
 
-        visual.TextStim(win, height=3.5, text=figure, color=color).draw()
-        visual.Rect(win, size=(4,4), lineColor=color).draw()
+        visual.TextStim(win,text=figure, color=color, height=4.5).draw()
+        #visual.Rect(win, size=(4,4), lineColor=color).draw()
         #print(time.time())
         win.flip()
         update_log('events', {'Event': '!E TRIAL_EVENT_VAR stimulus_onset',
@@ -129,6 +137,7 @@ def main_loop(block_num):
                               'RecordingTimestamp': now_time()})
         if color == 'red':
             last_red = figure
+            update = True
         if num != 1:
             if random.randint(1,10) == 10:
                 go = False
@@ -138,7 +147,8 @@ def main_loop(block_num):
                            'border_color': color,
                            'is_color_change': color_change,
                            'is_figure_change': figure_change,
-                           'block': f's_{block_num}'})
+                           'is_update': update,
+                           'block': f'b_{block_num}'})
 
         update_log('events',{
             'Event': 'TRIAL_END',
@@ -146,11 +156,17 @@ def main_loop(block_num):
 
         num += 1
 
-    visual.TextStim(win, height=2.5, text=f"What is the last red figure shown?").draw()
+    visual.TextStim(win, text=f"מה האות האחרונה שהופיעה באדום?", languageStyle='RTL').draw()
     # add input from user
     # drop block when user got wrong answer
     win.flip()
-    core.wait(3)
+    key = event.waitKeys()[0]
+    print(key)
+    print(str.lower(key) == str.lower(last_red))
+    update_log('input', {'pressed_key': key,
+                         'last_red': last_red,
+                        'is_correct': str.lower(key) == str.lower(last_red),
+                        'block': f'b_{block_num}'})
 def stop_and_save_logs():
     global tracker, start_time
     win.flip()
@@ -168,7 +184,7 @@ def stop_and_save_logs():
 
     #  Save data and messages
     df = pd.DataFrame(gaze_data, columns=tracker.header)
-    df['UTC'] = df['UTC'].apply(lambda x: str(round(1000 * (x - start_time), 3)))
+    df['UTC'] = df['UTC'].apply(lambda x: str(round(1000 * (x - start_time))))
     df.to_csv(LOG_FOLDER_PATH + settings.FILENAME[:-4] + timestamp + '.csv', sep=',', index = False)
     #df.to_csv(settings.FILENAME[:-4] + timestamp + '.csv', sep=',')
 
@@ -176,18 +192,21 @@ def stop_and_save_logs():
     events_df.to_csv(LOG_FOLDER_PATH + settings.FILENAME[:-4] + timestamp + '_events.csv', sep=',', index = False)
     vars_df['is_color_change'] = vars_df['is_color_change'].map({True: 'TRUE', False: 'FALSE'})
     vars_df['is_figure_change'] = vars_df['is_figure_change'].map({True: 'TRUE', False: 'FALSE'})
+    vars_df['is_update'] = vars_df['is_update'].map({True: 'TRUE', False: 'FALSE'})
     vars_df.to_csv(LOG_FOLDER_PATH + settings.FILENAME[:-4] + timestamp + '_vars.csv', sep=',', index = False)
     #df_msg.to_csv(settings.FILENAME[:-4] + '_msg' + timestamp + '.csv', sep='\t')
-
+    input_df.to_csv(LOG_FOLDER_PATH + settings.FILENAME[:-4] + timestamp + '_user_inputs.csv', sep=',', index=False)
     tbi_file = LogsConversion(LOG_FOLDER_PATH + settings.FILENAME[:-4] + timestamp + '.csv')
     tbi_file.convert().save()
 
 
 def main():
     global tracker
-    visual.TextStim(win, height=2.5, text=f"welcome to the experiment!\nAlways keep in your mind the last red figure").draw()
+    visual.TextStim(win,
+                   text="ברוכה הבאה לניסוי!\nההוראה היא פשוטה ויחידה:\nלהחזיק כל הזמן בראש מה\nהייתה האות האדומה האחרונה\n\nלחצי על כל כפתור כדי להמשיך",
+                   languageStyle='RTL').draw()
     win.flip()
-    core.wait(3)
+    event.waitKeys()
     connect_and_calibrate()
     for i in range(BLOCKS):
         main_loop(i)
