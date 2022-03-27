@@ -16,7 +16,7 @@ events_df = pd.DataFrame()
 start_time = time.time()
 
 # %%  Monitor/geometry
-SESSIONS = 2
+SESSIONS = 4
 MY_MONITOR = 'testMonitor'  # needs to exists in PsychoPy monitor center
 FULLSCREEN = True
 SCREEN_RES = [1920, 1080]
@@ -87,7 +87,7 @@ def main_loop(session_num):
     global events_df, vars_df, start_time
     visual.TextStim(win, height=2.5, text=f"welcome to session #{session_num + 1}!").draw()
     win.flip()
-    core.wait(1)
+    core.wait(3)
     go = True
     num = 0
     last_color = ''
@@ -169,6 +169,8 @@ def stop_and_save_logs():
 
     #df_msg = pd.DataFrame(msg_data, columns=['system_time_stamp', 'msg'])
     events_df.to_csv(LOG_FOLDER_PATH + settings.FILENAME[:-4] + timestamp + '_events.csv', sep=',', index = False)
+    vars_df['is_color_change'] = vars_df['is_color_change'].map({True: 'TRUE', False: 'FALSE'})
+    vars_df['is_figure_change'] = vars_df['is_figure_change'].map({True: 'TRUE', False: 'FALSE'})
     vars_df.to_csv(LOG_FOLDER_PATH + settings.FILENAME[:-4] + timestamp + '_vars.csv', sep=',', index = False)
     #df_msg.to_csv(settings.FILENAME[:-4] + '_msg' + timestamp + '.csv', sep='\t')
 
@@ -180,7 +182,7 @@ def main():
     global tracker
     visual.TextStim(win, height=2.5, text=f"welcome to the experiment!\n...").draw()
     win.flip()
-    core.wait(1)
+    core.wait(3)
     connect_and_calibrate()
     for i in range(SESSIONS):
         main_loop(i)

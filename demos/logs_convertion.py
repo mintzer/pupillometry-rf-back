@@ -39,7 +39,7 @@ class LogsConversion(object):
         return self
 
     def save(self):
-        self.file.to_csv(f'{self.path[:-4]}_converted.csv', index = False)
+        self.file.to_csv(f'{self.path[:-4]}.tbi', index = False)
         return self
 
 #g = LogsConversion(r"C:\Python\Titta-master\demos\logs\testfile_11_11_21_14_18_44.tsv")
