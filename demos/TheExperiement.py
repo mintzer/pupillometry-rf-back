@@ -99,15 +99,12 @@ def main_loop(block_num):
     last_color = ''
     last_figure = ''
     last_red = ''
-    color_change = False
-    figure_change = False
-    update = False
     while go:
-        update_log('events', {'Event': 'TRIALID',
-                              'RecordingTimestamp': now_time()})
         figure = random.choice(['X','Y'])
         color = random.choice(['blue','red'])
-
+        update = False
+        color_change = False
+        figure_change = False
         if figure != last_figure and last_figure != '':
             figure_change = True
         last_figure = color
@@ -120,8 +117,10 @@ def main_loop(block_num):
             color = 'red'
         fixation_point.draw()
         win.flip()
-        update_log('events',{'Event': '!E TRIAL_EVENT_VAR fixation',
-                             'RecordingTimestamp': now_time()})
+        update_log('events', {'Event': 'TRIALID',
+                              'RecordingTimestamp': now_time()})
+        #update_log('events',{'Event': '!E TRIAL_EVENT_VAR fixation',
+        #                     'RecordingTimestamp': now_time()})
         core.wait(1)
 
         visual.TextStim(win,text=figure, color=color, height=4.5).draw()
@@ -133,8 +132,11 @@ def main_loop(block_num):
         core.wait(1)
 
         win.flip()
-        update_log('events', {'Event': '!E TRIAL_EVENT_VAR stimulus_offset',
-                              'RecordingTimestamp': now_time()})
+        #update_log('events', {'Event': '!E TRIAL_EVENT_VAR stimulus_offset',
+        #                      'RecordingTimestamp': now_time()})
+        update_log('events',{
+            'Event': 'TRIAL_END',
+            'RecordingTimestamp': now_time()})
         if color == 'red':
             last_red = figure
             update = True
@@ -149,11 +151,6 @@ def main_loop(block_num):
                            'is_figure_change': figure_change,
                            'is_update': update,
                            'block': f'b_{block_num}'})
-
-        update_log('events',{
-            'Event': 'TRIAL_END',
-            'RecordingTimestamp': now_time()})
-
         num += 1
 
     visual.TextStim(win, text=f"מה האות האחרונה שהופיעה באדום?", languageStyle='RTL').draw()
@@ -200,6 +197,9 @@ def stop_and_save_logs():
     tbi_file = LogsConversion(LOG_FOLDER_PATH + settings.FILENAME[:-4] + timestamp + '.csv')
     tbi_file.convert().save()
 
+def show_summary():
+    print(f'total time: {round(time.time() - start_time)} seconds\n\
+          number of blocks: {BLOCKS}')
 
 def main():
     global tracker
@@ -212,7 +212,7 @@ def main():
     for i in range(BLOCKS):
         main_loop(i)
     stop_and_save_logs()
-
+    show_summary()
 
 if __name__ == '__main__':
     main()
