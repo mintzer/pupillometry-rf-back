@@ -18,7 +18,7 @@ input_df = pd.DataFrame()
 start_time = time.time()
 
 # %%  Monitor/geometry
-BLOCKS = 1
+BLOCKS = 4
 MY_MONITOR = 'testMonitor'  # needs to exists in PsychoPy monitor center
 FULLSCREEN = True
 SCREEN_RES = [1920, 1080]
@@ -43,7 +43,7 @@ bimonocular_calibration = False
 
 # Change any of the default dettings?e
 settings = Titta.get_defaults(et_name)
-settings.FILENAME = 'testfile.tsv'
+settings.FILENAME = 'run'
 settings.N_CAL_TARGETS = 5
 
 win = visual.Window(monitor=mon, fullscr=FULLSCREEN,
@@ -174,7 +174,7 @@ def stop_and_save_logs():
     tracker.save_data(mon)  # Also save screen geometry from the monitor object
 
     # %% Open pickle and write et-data and messages to tsv-files.
-    f = open(settings.FILENAME[:-4] + '.pkl', 'rb')
+    f = open(settings.FILENAME + '.pkl', 'rb')
     gaze_data = pickle.load(f)
     msg_data = pickle.load(f)
     timestamp = time.strftime("_%d_%m_%y_%H_%M_%S")
@@ -182,19 +182,19 @@ def stop_and_save_logs():
     #  Save data and messages
     df = pd.DataFrame(gaze_data, columns=tracker.header)
     df['UTC'] = df['UTC'].apply(lambda x: str(round(1000 * (x - start_time))))
-    df.to_csv(LOG_FOLDER_PATH + settings.FILENAME[:-4] + timestamp + '.csv', sep=',', index = False)
-    #df.to_csv(settings.FILENAME[:-4] + timestamp + '.csv', sep=',')
+    df.to_csv(LOG_FOLDER_PATH + settings.FILENAME + timestamp + '.csv', sep=',', index = False)
+    #df.to_csv(settings.FILENAME + timestamp + '.csv', sep=',')
 
     #df_msg = pd.DataFrame(msg_data, columns=['system_time_stamp', 'msg'])
-    events_df.to_csv(LOG_FOLDER_PATH + settings.FILENAME[:-4] + timestamp + '_events.csv', sep=',', index = False)
+    events_df.to_csv(LOG_FOLDER_PATH + settings.FILENAME + timestamp + '_events.csv', sep=',', index = False)
     vars_df['is_color_change'] = vars_df['is_color_change'].map({True: 'TRUE', False: 'FALSE'})
     vars_df['is_figure_change'] = vars_df['is_figure_change'].map({True: 'TRUE', False: 'FALSE'})
     vars_df['is_update'] = vars_df['is_update'].map({True: 'TRUE', False: 'FALSE'})
-    vars_df.to_csv(LOG_FOLDER_PATH + settings.FILENAME[:-4] + timestamp + '_vars.csv', sep=',', index = False)
-    #df_msg.to_csv(settings.FILENAME[:-4] + '_msg' + timestamp + '.csv', sep='\t')
+    vars_df.to_csv(LOG_FOLDER_PATH + settings.FILENAME + timestamp + '_vars.csv', sep=',', index = False)
+    #df_msg.to_csv(settings.FILENAME + '_msg' + timestamp + '.csv', sep='\t')
     input_df['is_correct'] = input_df['is_correct'].map({True: 'TRUE', False: 'FALSE'})
-    input_df.to_csv(LOG_FOLDER_PATH + settings.FILENAME[:-4] + timestamp + '_user_inputs.csv', sep=',', index=False)
-    tbi_file = LogsConversion(LOG_FOLDER_PATH + settings.FILENAME[:-4] + timestamp + '.csv')
+    input_df.to_csv(LOG_FOLDER_PATH + settings.FILENAME + timestamp + '_user_inputs.csv', sep=',', index=False)
+    tbi_file = LogsConversion(LOG_FOLDER_PATH + settings.FILENAME + timestamp + '.csv')
     tbi_file.convert().save()
 
 def show_summary():
