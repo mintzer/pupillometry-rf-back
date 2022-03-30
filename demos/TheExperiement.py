@@ -20,8 +20,8 @@ start_time = time.time()
 # %%  Monitor/geometry
 subject = 'sub01'
 BLOCKS = 4
-DOMINANT = 'red'
-NON_DOMINANT = 'blue'
+NON_DOMINANT = 'red'
+DOMINANT = 'blue'
 MY_MONITOR = 'testMonitor'  # needs to exists in PsychoPy monitor center
 FULLSCREEN = True
 SCREEN_RES = [1920, 1080]
