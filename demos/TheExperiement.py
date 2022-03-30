@@ -19,12 +19,16 @@ start_time = time.time()
 
 # %%  Monitor/geometry
 BLOCKS = 4
+NON_DOMINANT = 'red'
+DOMINANT = 'blue'
 MY_MONITOR = 'testMonitor'  # needs to exists in PsychoPy monitor center
 FULLSCREEN = True
 SCREEN_RES = [1920, 1080]
 SCREEN_WIDTH = 52.7  # cm
 VIEWING_DIST = 63  # distance from eye to center of screen (cm)
 LOG_FOLDER_PATH = r'logs/'
+heb_colors = {'red': 'אדום',
+              'blue': 'כחול'}
 
 monitor_refresh_rate = 60  # frames per second (fps)
 mon = monitors.Monitor(MY_MONITOR)  # Defined in defaults file
@@ -90,15 +94,16 @@ def now_time():
 def main_loop(block_num):
     global events_df, vars_df, start_time
     visual.TextStim(win,
-                    text=f"ברוכה הבאה לבלוק מספר {block_num + 1}!\nתזכורת: בכל רגע נתון תצטרכי לזכור\nמה היא האות האחרונה\nשהופיעה בצבע אדום\n\nלחצי על כל כפתור כדי להמשיך",
-                    languageStyle='RTL').draw()
+                    text=f"ברוכה הבאה לבלוק מספר {block_num + 1}!\nתזכורת: בכל רגע נתון תצטרכי לזכור\nמה היא האות האחרונה\nשהופיעה בצבע {heb_colors[DOMINANT]}\n\nלחצי על כל כפתור כדי להמשיך",
+                    languageStyle='RTL',
+                    color=DOMINANT).draw()
     win.flip()
     event.waitKeys()
     go = True
     num = 0
     last_color = ''
     last_figure = ''
-    last_red = ''
+    last_dominant = ''
     while go:
         figure = random.choice(['X','Y'])
         color = random.choice(['blue','red'])
@@ -114,7 +119,7 @@ def main_loop(block_num):
         last_color = color
 
         if num == 0:
-            color = 'red'
+            color = DOMINANT
         fixation_point.draw()
         win.flip()
         update_log('events', {'Event': 'TRIALID',
@@ -138,7 +143,7 @@ def main_loop(block_num):
             'Event': 'TRIAL_END',
             'RecordingTimestamp': now_time()})
         if color == 'red':
-            last_red = figure
+            last_dominant = figure
             update = True
         if num != 1:
             if random.randint(1,10) == 10:
@@ -153,17 +158,18 @@ def main_loop(block_num):
                            'block': f'b_{block_num}'})
         num += 1
 
-    visual.TextStim(win, text=f"מה האות האחרונה שהופיעה באדום?", languageStyle='RTL').draw()
+    visual.TextStim(win, text=f"מה האות האחרונה שהופיעה ב{DOMINANT}?", languageStyle='RTL').draw()
     # add input from user
     # drop block when user got wrong answer
     win.flip()
     key = event.waitKeys()[0]
     print(key)
-    print(str.lower(key) == str.lower(last_red))
+    print(str.lower(key) == str.lower(last_dominant))
     update_log('input', {'pressed_key': key,
-                         'last_red': last_red,
-                        'is_correct': str.lower(key) == str.lower(last_red),
+                         'last_dominant': last_dominant,
+                        'is_correct': str.lower(key) == str.lower(last_dominant),
                         'block': f'b_{block_num}'})
+
 def stop_and_save_logs():
     global tracker, start_time
     win.flip()
@@ -204,7 +210,7 @@ def show_summary():
 def main():
     global tracker
     visual.TextStim(win,
-                   text="ברוכה הבאה לניסוי!\nההוראה היא פשוטה ויחידה:\nלהחזיק כל הזמן בראש מה\nהייתה האות האדומה האחרונה\n\nלחצי על כל כפתור כדי להמשיך",
+                   text=f"ברוכה הבאה לניסוי!\nההוראה היא פשוטה ויחידה:\nלהחזיק כל הזמן בראש מה\nהייתה האות האחרונה בצבע {heb_colors[DOMINANT]}\n\nלחצי על כל כפתור כדי להמשיך",
                    languageStyle='RTL').draw()
     win.flip()
     event.waitKeys()
