@@ -2071,7 +2071,7 @@ class myTobii(object):
             settings (self.settings.FILENAME). Should be a string, e.g., 'fp1'
             *argv refers to additional information you want to add to the same pickle
         '''
-
+        filename = 'run'
         if filename:
             fname = filename
         else:

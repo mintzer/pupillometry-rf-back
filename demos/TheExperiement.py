@@ -19,7 +19,7 @@ start_time = time.time()
 
 # %%  Monitor/geometry
 subject = 'sub01'
-BLOCKS = 4
+BLOCKS = 8
 DOMINANT = 'red'
 NON_DOMINANT = 'blue'
 MY_MONITOR = 'testMonitor'  # needs to exists in PsychoPy monitor center
