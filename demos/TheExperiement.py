@@ -158,7 +158,7 @@ def main_loop(block_num):
                            'block': f'b_{block_num}'})
         num += 1
 
-    visual.TextStim(win, text=f"מה האות האחרונה שהופיעה ב{DOMINANT}?", languageStyle='RTL').draw()
+    visual.TextStim(win, text=f"מה האות האחרונה שהופיעה ב{heb_colors[DOMINANT]}?", languageStyle='RTL', color=DOMINANT).draw()
     # add input from user
     # drop block when user got wrong answer
     win.flip()
@@ -211,7 +211,7 @@ def main():
     global tracker
     visual.TextStim(win,
                    text=f"ברוכה הבאה לניסוי!\nההוראה היא פשוטה ויחידה:\nלהחזיק כל הזמן בראש מה\nהייתה האות האחרונה בצבע {heb_colors[DOMINANT]}\n\nלחצי על כל כפתור כדי להמשיך",
-                   languageStyle='RTL').draw()
+                   languageStyle='RTL', color=DOMINANT).draw()
     win.flip()
     event.waitKeys()
     connect_and_calibrate()
