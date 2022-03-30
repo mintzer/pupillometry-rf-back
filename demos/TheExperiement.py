@@ -18,6 +18,7 @@ input_df = pd.DataFrame()
 start_time = time.time()
 
 # %%  Monitor/geometry
+subject = 'sub01'
 BLOCKS = 4
 NON_DOMINANT = 'red'
 DOMINANT = 'blue'
@@ -107,19 +108,20 @@ def main_loop(block_num):
     while go:
         figure = random.choice(['X','Y'])
         color = random.choice(['blue','red'])
+        if num == 0:
+            color = DOMINANT
         update = False
         color_change = False
         figure_change = False
         if figure != last_figure and last_figure != '':
             figure_change = True
-        last_figure = color
+        last_figure = figure
 
         if color != last_color and last_color != '':
             color_change = True
         last_color = color
 
-        if num == 0:
-            color = DOMINANT
+
         fixation_point.draw()
         win.flip()
         update_log('events', {'Event': 'TRIALID',
@@ -142,7 +144,7 @@ def main_loop(block_num):
         update_log('events',{
             'Event': 'TRIAL_END',
             'RecordingTimestamp': now_time()})
-        if color == 'red':
+        if color == DOMINANT:
             last_dominant = figure
             update = True
         if num != 1:
@@ -183,24 +185,24 @@ def stop_and_save_logs():
     f = open(settings.FILENAME + '.pkl', 'rb')
     gaze_data = pickle.load(f)
     msg_data = pickle.load(f)
-    timestamp = time.strftime("_%d_%m_%y_%H_%M_%S")
-
+    timestamp = time.strftime("%d_%m_%H_%M")
+    main_path = f'{LOG_FOLDER_PATH}{settings.FILENAME}_{subject}_{DOMINANT}_{timestamp}'
     #  Save data and messages
     df = pd.DataFrame(gaze_data, columns=tracker.header)
     df['UTC'] = df['UTC'].apply(lambda x: str(round(1000 * (x - start_time))))
-    df.to_csv(LOG_FOLDER_PATH + settings.FILENAME + timestamp + '.csv', sep=',', index = False)
+    df.to_csv(main_path + '.csv', sep=',', index = False)
     #df.to_csv(settings.FILENAME + timestamp + '.csv', sep=',')
 
     #df_msg = pd.DataFrame(msg_data, columns=['system_time_stamp', 'msg'])
     events_df.to_csv(LOG_FOLDER_PATH + settings.FILENAME + timestamp + '_events.csv', sep=',', index = False)
-    vars_df['is_color_change'] = vars_df['is_color_change'].map({True: 'TRUE', False: 'FALSE'})
-    vars_df['is_figure_change'] = vars_df['is_figure_change'].map({True: 'TRUE', False: 'FALSE'})
-    vars_df['is_update'] = vars_df['is_update'].map({True: 'TRUE', False: 'FALSE'})
-    vars_df.to_csv(LOG_FOLDER_PATH + settings.FILENAME + timestamp + '_vars.csv', sep=',', index = False)
+    vars_df['is_color_change'] = vars_df['is_color_change'].map({True: 'color_change', False: 'no_color_change'})
+    vars_df['is_figure_change'] = vars_df['is_figure_change'].map({True: 'figure_change', False: 'no_figure_change'})
+    vars_df['is_update'] = vars_df['is_update'].map({True: 'update', False: 'no_update'})
+    vars_df.to_csv(main_path + '_vars.csv', sep=',', index = False)
     #df_msg.to_csv(settings.FILENAME + '_msg' + timestamp + '.csv', sep='\t')
-    input_df['is_correct'] = input_df['is_correct'].map({True: 'TRUE', False: 'FALSE'})
-    input_df.to_csv(LOG_FOLDER_PATH + settings.FILENAME + timestamp + '_user_inputs.csv', sep=',', index=False)
-    tbi_file = LogsConversion(LOG_FOLDER_PATH + settings.FILENAME + timestamp + '.csv')
+    input_df['is_correct'] = input_df['is_correct'].map({True: 'correct', False: 'incorrect'})
+    input_df.to_csv(main_path + '_user_inputs.csv', sep=',', index=False)
+    tbi_file = LogsConversion(main_path + '.csv')
     tbi_file.convert().save()
 
 def show_summary():
