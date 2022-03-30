@@ -8,11 +8,11 @@ x
 True
 x
 True
-x
+y
 True
-x
+y
 True
-1.3053 	WARNING 	Requested an unavailable screen number - using first available.
-1.3060 	WARNING 	User requested fullscreen with size [1920 1080], but screen is actually [1707, 960]. Using actual size
-total time: 121 seconds
+1.2247 	WARNING 	Requested an unavailable screen number - using first available.
+1.2254 	WARNING 	User requested fullscreen with size [1920 1080], but screen is actually [1707, 960]. Using actual size
+total time: 98 seconds
           number of blocks: 4

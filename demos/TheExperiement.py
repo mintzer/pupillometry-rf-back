@@ -20,8 +20,8 @@ start_time = time.time()
 # %%  Monitor/geometry
 subject = 'sub01'
 BLOCKS = 4
-NON_DOMINANT = 'red'
-DOMINANT = 'blue'
+DOMINANT = 'red'
+NON_DOMINANT = 'blue'
 MY_MONITOR = 'testMonitor'  # needs to exists in PsychoPy monitor center
 FULLSCREEN = True
 SCREEN_RES = [1920, 1080]
@@ -126,8 +126,8 @@ def main_loop(block_num):
         win.flip()
         update_log('events', {'Event': 'TRIALID',
                               'RecordingTimestamp': now_time()})
-        #update_log('events',{'Event': '!E TRIAL_EVENT_VAR fixation',
-        #                     'RecordingTimestamp': now_time()})
+        update_log('events',{'Event': '!E TRIAL_EVENT_VAR fixation',
+                             'RecordingTimestamp': now_time()})
         core.wait(1)
 
         visual.TextStim(win,text=figure, color=color, height=4.5).draw()
@@ -139,8 +139,8 @@ def main_loop(block_num):
         core.wait(1)
 
         win.flip()
-        #update_log('events', {'Event': '!E TRIAL_EVENT_VAR stimulus_offset',
-        #                      'RecordingTimestamp': now_time()})
+        update_log('events', {'Event': '!E TRIAL_EVENT_VAR stimulus_offset',
+                              'RecordingTimestamp': now_time()})
         update_log('events',{
             'Event': 'TRIAL_END',
             'RecordingTimestamp': now_time()})
