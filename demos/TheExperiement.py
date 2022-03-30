@@ -194,7 +194,7 @@ def stop_and_save_logs():
     #df.to_csv(settings.FILENAME + timestamp + '.csv', sep=',')
 
     #df_msg = pd.DataFrame(msg_data, columns=['system_time_stamp', 'msg'])
-    events_df.to_csv(LOG_FOLDER_PATH + settings.FILENAME + timestamp + '_events.csv', sep=',', index = False)
+    events_df.to_csv(main_path + '_events.csv', sep=',', index = False)
     vars_df['is_color_change'] = vars_df['is_color_change'].map({True: 'color_change', False: 'no_color_change'})
     vars_df['is_figure_change'] = vars_df['is_figure_change'].map({True: 'figure_change', False: 'no_figure_change'})
     vars_df['is_update'] = vars_df['is_update'].map({True: 'update', False: 'no_update'})
