@@ -123,11 +123,10 @@ def main_loop(block_num):
         event.waitKeys()
         fixation_point.draw()
         win.flip()
-        trial_start = now_time()
         update_log('events', {'Event': 'TRIALID',
-                              'RecordingTimestamp': trial_start})
+                              'RecordingTimestamp': now_time()})
         update_log('events',{'Event': '!E TRIAL_EVENT_VAR fixation',
-                             'RecordingTimestamp': trial_start})
+                             'RecordingTimestamp': now_time()})
         core.wait(1)
 
         visual.TextStim(win,text=figure, color=color, height=4.5).draw()
@@ -135,15 +134,12 @@ def main_loop(block_num):
         #print(time.time())
         win.flip()
         update_log('events', {'Event': '!E TRIAL_EVENT_VAR stimulus_on',
-                              'RecordingTimestamp': str(int(trial_start) + 1000)})
+                              'RecordingTimestamp': now_time()})
         core.wait(1)
 
         win.flip()
         update_log('events', {'Event': '!E TRIAL_EVENT_VAR stimulus_off',
-                              'RecordingTimestamp': str(int(trial_start) + 2000)})
-        update_log('events',{
-            'Event': 'TRIAL_END',
-            'RecordingTimestamp': str(int(trial_start) + 2000)})
+                              'RecordingTimestamp': now_time()})
         if color == DOMINANT:
             last_dominant = figure
             update = True
@@ -159,6 +155,9 @@ def main_loop(block_num):
                            'is_update': update,
                            'block': f'b_{block_num}'})
         num += 1
+        update_log('events',{
+            'Event': 'TRIAL_END',
+            'RecordingTimestamp': now_time()})
 
     visual.TextStim(win, text=f"מה האות האחרונה שהופיעה ב{heb_colors[DOMINANT]}?", languageStyle='RTL', color=DOMINANT).draw()
     # add input from user
@@ -186,7 +185,7 @@ def stop_and_save_logs():
     gaze_data = pickle.load(f)
     msg_data = pickle.load(f)
     timestamp = time.strftime("%d_%m_%H_%M")
-    main_path = f'{LOG_FOLDER_PATH}{settings.FILENAME}_{subject}_{DOMINANT}_{timestamp}'
+    main_path = f'{LOG_FOLDER_PATH}{subject}//{timestamp}//{settings.FILENAME}_{DOMINANT}'
     #  Save data and messages
     df = pd.DataFrame(gaze_data, columns=tracker.header)
     df['UTC'] = df['UTC'].apply(lambda x: str(round(1000 * (x - start_time))))
