@@ -99,7 +99,6 @@ def main_loop(block_num):
                     languageStyle='RTL',
                     color=DOMINANT).draw()
     win.flip()
-    event.waitKeys()
     go = True
     num = 0
     last_color = ''
@@ -121,29 +120,30 @@ def main_loop(block_num):
             color_change = True
         last_color = color
 
-
+        event.waitKeys()
         fixation_point.draw()
         win.flip()
+        trial_start = now_time()
         update_log('events', {'Event': 'TRIALID',
-                              'RecordingTimestamp': now_time()})
+                              'RecordingTimestamp': trial_start})
         update_log('events',{'Event': '!E TRIAL_EVENT_VAR fixation',
-                             'RecordingTimestamp': now_time()})
+                             'RecordingTimestamp': trial_start})
         core.wait(1)
 
         visual.TextStim(win,text=figure, color=color, height=4.5).draw()
         #visual.Rect(win, size=(4,4), lineColor=color).draw()
         #print(time.time())
         win.flip()
-        update_log('events', {'Event': '!E TRIAL_EVENT_VAR stimulus_onset',
-                              'RecordingTimestamp': now_time()})
+        update_log('events', {'Event': '!E TRIAL_EVENT_VAR stimulus_on',
+                              'RecordingTimestamp': str(int(trial_start) + 1000)})
         core.wait(1)
 
         win.flip()
-        update_log('events', {'Event': '!E TRIAL_EVENT_VAR stimulus_offset',
-                              'RecordingTimestamp': now_time()})
+        update_log('events', {'Event': '!E TRIAL_EVENT_VAR stimulus_off',
+                              'RecordingTimestamp': str(int(trial_start) + 2000)})
         update_log('events',{
             'Event': 'TRIAL_END',
-            'RecordingTimestamp': now_time()})
+            'RecordingTimestamp': str(int(trial_start) + 2000)})
         if color == DOMINANT:
             last_dominant = figure
             update = True
