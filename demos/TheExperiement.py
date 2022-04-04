@@ -185,7 +185,7 @@ def stop_and_save_logs():
     gaze_data = pickle.load(f)
     msg_data = pickle.load(f)
     timestamp = time.strftime("%d_%m_%H_%M")
-    main_path = f'{LOG_FOLDER_PATH}{subject}//{timestamp}//{settings.FILENAME}_{DOMINANT}'
+    main_path = f'{LOG_FOLDER_PATH}{subject}//{settings.FILENAME}_{DOMINANT}_{timestamp}'
     #  Save data and messages
     df = pd.DataFrame(gaze_data, columns=tracker.header)
     df['UTC'] = df['UTC'].apply(lambda x: str(round(1000 * (x - start_time))))

@@ -7,12 +7,6 @@
     <list default="true" id="cba21c33-3bf5-4b0e-8491-fce07d9f0809" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/demos/TheExperiement.py" beforeDir="false" afterPath="$PROJECT_DIR$/demos/TheExperiement.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demos/logs/01.chp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demos/logs/01.tbi" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demos/logs/run_sub01_blue_03_04_15_50.chp" beforeDir="false" afterPath="$PROJECT_DIR$/demos/logs/run_sub01_blue_03_04_15_50.chp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demos/logs/run_sub01_blue_03_04_15_50_events.csv" beforeDir="false" afterPath="$PROJECT_DIR$/demos/logs/run_sub01_blue_03_04_15_50_events.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demos/logs/run_sub01_blue_03_04_15_50_vars.csv" beforeDir="false" afterPath="$PROJECT_DIR$/demos/logs/run_sub01_blue_03_04_15_50_vars.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demos/logs/run_sub01_red_03_04_15_45.chp" beforeDir="false" afterPath="$PROJECT_DIR$/demos/logs/run_sub01_red_03_04_15_45.chp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
