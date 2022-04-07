@@ -6,7 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="cba21c33-3bf5-4b0e-8491-fce07d9f0809" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demos/1.bin" beforeDir="false" afterPath="$PROJECT_DIR$/demos/1.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/demos/TheExperiement.py" beforeDir="false" afterPath="$PROJECT_DIR$/demos/TheExperiement.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demos/calibration_image1.png" beforeDir="false" afterPath="$PROJECT_DIR$/demos/calibration_image1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demos/run.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/demos/run.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demos/validation_image1.png" beforeDir="false" afterPath="$PROJECT_DIR$/demos/validation_image1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/logs.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs/logs.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,6 +85,5 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

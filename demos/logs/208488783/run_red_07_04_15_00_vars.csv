@@ -1,0 +1,14 @@
+block,border_color,figure,is_color_change,is_figure_change,is_update,trial_id
+b_0,blue,X,,,,0
+b_0,red,Y,,,,1
+b_0,red,Y,,,,2
+b_0,blue,Y,,,,3
+b_0,red,X,,,,4
+b_0,red,X,,,,5
+b_0,blue,Y,,,,6
+b_0,red,Y,no_color_change,no_figure_change,update,0
+b_0,blue,X,color_change,figure_change,no_update,1
+b_0,blue,X,no_color_change,no_figure_change,no_update,2
+b_0,blue,X,no_color_change,no_figure_change,no_update,3
+b_0,red,X,color_change,no_figure_change,update,4
+b_0,blue,Y,color_change,figure_change,no_update,5

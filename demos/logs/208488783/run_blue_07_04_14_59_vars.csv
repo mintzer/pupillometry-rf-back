@@ -1,0 +1,8 @@
+block,border_color,figure,is_color_change,is_figure_change,is_update,trial_id
+b_0,blue,X,no_color_change,no_figure_change,update,0
+b_0,red,Y,color_change,figure_change,no_update,1
+b_0,red,Y,no_color_change,no_figure_change,no_update,2
+b_0,blue,Y,color_change,no_figure_change,update,3
+b_0,red,X,color_change,figure_change,no_update,4
+b_0,red,X,no_color_change,no_figure_change,no_update,5
+b_0,blue,Y,color_change,figure_change,update,6

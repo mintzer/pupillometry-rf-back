@@ -15,11 +15,10 @@ global tracker
 vars_df = pd.DataFrame()
 events_df = pd.DataFrame()
 input_df = pd.DataFrame()
-start_time = time.time()
 
 # %%  Monitor/geometry
-subject = 'sub01'
-BLOCKS = 4
+subject = '208488783'
+BLOCKS = 2
 NON_DOMINANT = 'red'
 DOMINANT = 'blue'
 MY_MONITOR = 'testMonitor'  # needs to exists in PsychoPy monitor center
@@ -51,19 +50,10 @@ settings = Titta.get_defaults(et_name)
 settings.FILENAME = 'run'
 settings.N_CAL_TARGETS = 5
 
-win = visual.Window(monitor=mon, fullscr=FULLSCREEN,
-                    screen=1, size=SCREEN_RES, units='deg')
-
-fixation_point = helpers.MyDot2(win)
 #image = visual.ImageStim(win, image=im_name, units='norm', size=(2, 2))
 
-tracker = Titta.Connect(settings)
-if dummy_mode:
-    tracker.set_dummy_mode()
-tracker.init()
-
 def connect_and_calibrate():
-    global tracker
+    global tracker, win
     # %% Connect to eye tracker and calibrate
     # Window set-up (this color will be used for calibration)
 
@@ -93,7 +83,7 @@ def now_time():
 
 # main loop
 def main_loop(block_num):
-    global events_df, vars_df, start_time
+    global events_df, vars_df, start_time, fixation_point, win
     visual.TextStim(win,
                     text=f"ברוכה הבאה לבלוק מספר {block_num + 1}!\nתזכורת: בכל רגע נתון תצטרכי לזכור\nמה היא האות האחרונה\nשהופיעה בצבע {heb_colors[DOMINANT]}\n\nלחצי על כל כפתור כדי להמשיך",
                     languageStyle='RTL',
@@ -104,6 +94,7 @@ def main_loop(block_num):
     last_color = ''
     last_figure = ''
     last_dominant = ''
+    event.waitKeys()
     while go:
         figure = random.choice(['X','Y'])
         color = random.choice(['blue','red'])
@@ -119,8 +110,6 @@ def main_loop(block_num):
         if color != last_color and last_color != '':
             color_change = True
         last_color = color
-
-        event.waitKeys()
         fixation_point.draw()
         win.flip()
         update_log('events', {'Event': 'TRIALID',
@@ -172,7 +161,7 @@ def main_loop(block_num):
                         'block': f'b_{block_num}'})
 
 def stop_and_save_logs():
-    global tracker, start_time
+    global tracker, start_time, win
     win.flip()
     tracker.stop_recording(gaze_data=True)
 
@@ -185,7 +174,7 @@ def stop_and_save_logs():
     gaze_data = pickle.load(f)
     msg_data = pickle.load(f)
     timestamp = time.strftime("%d_%m_%H_%M")
-    main_path = f'{LOG_FOLDER_PATH}{subject}//{settings.FILENAME}_{DOMINANT}_{timestamp}'
+    main_path = f'{LOG_FOLDER_PATH}{subject}/{settings.FILENAME}_{DOMINANT}_{timestamp}'
     #  Save data and messages
     df = pd.DataFrame(gaze_data, columns=tracker.header)
     df['UTC'] = df['UTC'].apply(lambda x: str(round(1000 * (x - start_time))))
@@ -209,17 +198,29 @@ def show_summary():
           number of blocks: {BLOCKS}')
 
 def main():
-    global tracker
-    visual.TextStim(win,
-                   text=f"ברוכה הבאה לניסוי!\nההוראה היא פשוטה ויחידה:\nלהחזיק כל הזמן בראש מה\nהייתה האות האחרונה בצבע {heb_colors[DOMINANT]}\n\nלחצי על כל כפתור כדי להמשיך",
-                   languageStyle='RTL', color=DOMINANT).draw()
-    win.flip()
-    event.waitKeys()
-    connect_and_calibrate()
-    for i in range(BLOCKS):
-        main_loop(i)
-    stop_and_save_logs()
-    show_summary()
+    global tracker, fixation_point, win, start_time, DOMINANT
+    from pathlib import Path
+    Path(fr"logs/{subject}").mkdir(parents=True, exist_ok=True)
+    for color in ['blue', 'red']:
+        start_time = time.time()
+        win = visual.Window(monitor=mon, fullscr=FULLSCREEN,
+                            screen=1, size=SCREEN_RES, units='deg')
+        fixation_point = helpers.MyDot2(win)
+        tracker = Titta.Connect(settings)
+        if dummy_mode:
+            tracker.set_dummy_mode()
+        tracker.init()
+        DOMINANT = color
+        visual.TextStim(win,
+                       text=f"ברוכה הבאה לניסוי!\nההוראה היא פשוטה ויחידה:\nלהחזיק כל הזמן בראש מה\nהייתה האות האחרונה בצבע {heb_colors[DOMINANT]}\n\nלחצי על כל כפתור כדי להמשיך",
+                       languageStyle='RTL', color=DOMINANT).draw()
+        win.flip()
+        event.waitKeys()
+        connect_and_calibrate()
+        for i in range(BLOCKS):
+            main_loop(i)
+        stop_and_save_logs()
+        show_summary()
 
 if __name__ == '__main__':
     main()
