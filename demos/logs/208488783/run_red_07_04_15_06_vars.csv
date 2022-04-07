@@ -24,10 +24,3 @@ b_1,blue,X,,,,18
 b_1,red,Y,,,,19
 b_1,red,Y,,,,20
 b_1,blue,X,,,,21
-b_0,red,Y,no_color_change,no_figure_change,update,0
-b_0,red,X,no_color_change,figure_change,update,1
-b_0,blue,Y,color_change,figure_change,no_update,2
-b_0,blue,Y,no_color_change,no_figure_change,no_update,3
-b_0,red,X,color_change,figure_change,update,4
-b_0,red,Y,no_color_change,figure_change,update,5
-b_1,red,Y,no_color_change,no_figure_change,update,0

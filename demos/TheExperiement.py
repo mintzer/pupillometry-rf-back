@@ -12,14 +12,10 @@ from logs_convertion import LogsConversion
 global events_df, vars_df, start_time
 global tracker
 
-vars_df = pd.DataFrame()
-events_df = pd.DataFrame()
-input_df = pd.DataFrame()
-
 # %%  Monitor/geometry
-subject = '208488783'
-COLORS = ['red','red', 'blue', 'blue']
-BLOCKS = 6
+subject = '319314381'
+COLORS = ['red','blue']
+BLOCKS = 2
 NON_DOMINANT = 'red'
 DOMINANT = 'blue'
 MY_MONITOR = 'testMonitor'  # needs to exists in PsychoPy monitor center
@@ -199,9 +195,12 @@ def show_summary():
           number of blocks: {BLOCKS}')
 
 def main():
-    global tracker, fixation_point, win, start_time, DOMINANT
+    global tracker, fixation_point, win, start_time, DOMINANT, vars_df, events_df, input_df
     from pathlib import Path
     Path(fr"logs/{subject}").mkdir(parents=True, exist_ok=True)
+    vars_df = pd.DataFrame()
+    events_df = pd.DataFrame()
+    input_df = pd.DataFrame()
     for color in COLORS:
         start_time = time.time()
         win = visual.Window(monitor=mon, fullscr=FULLSCREEN,
