@@ -18,7 +18,8 @@ input_df = pd.DataFrame()
 
 # %%  Monitor/geometry
 subject = '208488783'
-BLOCKS = 2
+COLORS = ['red','red', 'blue', 'blue']
+BLOCKS = 6
 NON_DOMINANT = 'red'
 DOMINANT = 'blue'
 MY_MONITOR = 'testMonitor'  # needs to exists in PsychoPy monitor center
@@ -201,7 +202,7 @@ def main():
     global tracker, fixation_point, win, start_time, DOMINANT
     from pathlib import Path
     Path(fr"logs/{subject}").mkdir(parents=True, exist_ok=True)
-    for color in ['blue', 'red']:
+    for color in COLORS:
         start_time = time.time()
         win = visual.Window(monitor=mon, fullscr=FULLSCREEN,
                             screen=1, size=SCREEN_RES, units='deg')
