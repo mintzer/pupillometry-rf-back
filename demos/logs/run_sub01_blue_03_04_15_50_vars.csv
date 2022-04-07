@@ -1,5 +1,0 @@
-block,border_color,figure,is_color_change,is_figure_change,is_update,trial_id
-b_0,blue,Y,no_color_change,no_figure_change,update,0
-b_0,red,X,color_change,figure_change,no_update,1
-b_0,blue,Y,color_change,figure_change,update,2
-b_0,red,X,color_change,figure_change,no_update,3

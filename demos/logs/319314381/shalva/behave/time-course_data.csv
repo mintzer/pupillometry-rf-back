@@ -1,0 +1,5 @@
+participant_id,condition,outliers,Valid_Trials,fixation,stimulus_on,Trial_Offset
+run_blue_07_04_15_33,no update,0,7,16,1023,1964
+run_blue_07_04_15_33,update,0,6,11,1019,1963
+run_red_07_04_15_32,no update,0,8,16,1023,1938
+run_red_07_04_15_32,update,0,9,14,1023,1964

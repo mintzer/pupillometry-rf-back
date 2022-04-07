@@ -1,0 +1,5 @@
+participant_id,condition,outliers,Valid_Trials,fixation,stimulus_on,Trial_Offset
+208488783,no update,0,12,16,1024,1800
+208488783,update,0,13,17,1024,1808
+319314381,no update,0,7,16,1023,1964
+319314381,update,0,6,11,1019,1963

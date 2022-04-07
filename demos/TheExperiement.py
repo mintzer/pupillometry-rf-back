@@ -16,7 +16,7 @@ global tracker
 subject = '319314381'
 COLORS = ['red','blue']
 BLOCKS = 2
-NON_DOMINANT = 'red'
+#NON_DOMINANT = 'red'
 DOMINANT = 'blue'
 MY_MONITOR = 'testMonitor'  # needs to exists in PsychoPy monitor center
 FULLSCREEN = True
@@ -198,10 +198,10 @@ def main():
     global tracker, fixation_point, win, start_time, DOMINANT, vars_df, events_df, input_df
     from pathlib import Path
     Path(fr"logs/{subject}").mkdir(parents=True, exist_ok=True)
-    vars_df = pd.DataFrame()
-    events_df = pd.DataFrame()
-    input_df = pd.DataFrame()
     for color in COLORS:
+        vars_df = pd.DataFrame()
+        events_df = pd.DataFrame()
+        input_df = pd.DataFrame()
         start_time = time.time()
         win = visual.Window(monitor=mon, fullscr=FULLSCREEN,
                             screen=1, size=SCREEN_RES, units='deg')
@@ -212,7 +212,7 @@ def main():
         tracker.init()
         DOMINANT = color
         visual.TextStim(win,
-                       text=f"ברוכה הבאה לניסוי!\nההוראה היא פשוטה ויחידה:\nלהחזיק כל הזמן בראש מה\nהייתה האות האחרונה בצבע {heb_colors[DOMINANT]}\n\nלחצי על כל כפתור כדי להמשיך",
+                       text=f"ברוכה הבאה! <|*_*|>\nההוראה היא פשוטה ויחידה:\nלהחזיק כל הזמן בראש מה\nהייתה האות האחרונה בצבע {heb_colors[DOMINANT]}\n\nלחצי על כל כפתור כדי להמשיך",
                        languageStyle='RTL', color=DOMINANT).draw()
         win.flip()
         event.waitKeys()

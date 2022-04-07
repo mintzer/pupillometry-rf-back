@@ -7,8 +7,36 @@
     <list default="true" id="cba21c33-3bf5-4b0e-8491-fce07d9f0809" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/demos/TheExperiement.py" beforeDir="false" afterPath="$PROJECT_DIR$/demos/TheExperiement.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demos/logs/208488783/run_red_07_04_15_00_vars.csv" beforeDir="false" afterPath="$PROJECT_DIR$/demos/logs/208488783/run_red_07_04_15_00_vars.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demos/logs/208488783/run_red_07_04_15_06_vars.csv" beforeDir="false" afterPath="$PROJECT_DIR$/demos/logs/208488783/run_red_07_04_15_06_vars.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demos/logs/319314381/run_blue_07_04_15_33_events.csv" beforeDir="false" afterPath="$PROJECT_DIR$/demos/logs/319314381/run_blue_07_04_15_33_events.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demos/logs/319314381/run_blue_07_04_15_33_user_inputs.csv" beforeDir="false" afterPath="$PROJECT_DIR$/demos/logs/319314381/run_blue_07_04_15_33_user_inputs.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demos/logs/319314381/run_blue_07_04_15_33_vars.csv" beforeDir="false" afterPath="$PROJECT_DIR$/demos/logs/319314381/run_blue_07_04_15_33_vars.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demos/logs/319314381/run_red_07_04_15_32_vars.csv" beforeDir="false" afterPath="$PROJECT_DIR$/demos/logs/319314381/run_red_07_04_15_32_vars.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demos/logs/chap/run_sub01_blue_03_04_15_50.chp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demos/logs/chap/run_sub01_red_03_04_15_45.chp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demos/logs/run_sub01_blue_03_04_15_50.chp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demos/logs/run_sub01_blue_03_04_15_50.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demos/logs/run_sub01_blue_03_04_15_50.tbi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demos/logs/run_sub01_blue_03_04_15_50_events - Copy.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demos/logs/run_sub01_blue_03_04_15_50_events.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demos/logs/run_sub01_blue_03_04_15_50_user_inputs.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demos/logs/run_sub01_blue_03_04_15_50_vars - Copy.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demos/logs/run_sub01_blue_03_04_15_50_vars.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demos/logs/run_sub01_red_03_04_15_45.chp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demos/logs/run_sub01_red_03_04_15_45.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demos/logs/run_sub01_red_03_04_15_45.tbi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demos/logs/run_sub01_red_03_04_15_45_events.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demos/logs/run_sub01_red_03_04_15_45_user_inputs.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demos/logs/run_sub01_red_03_04_15_45_vars.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demos/logs/test again/behave/outliers.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demos/logs/test again/csv/outliers.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demos/logs/test again/csv/time-course_data.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demos/logs/test again/csv/valid_trials.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demos/logs/test again/fig/outliers/run_sub01_blue_03_04_15_50.fig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demos/logs/test again/fig/outliers/run_sub01_red_03_04_15_45.fig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demos/logs/test again/mat/outliers/run_sub01_blue_03_04_15_50.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demos/logs/test again/mat/outliers/run_sub01_red_03_04_15_45.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demos/logs/test again/png/outliers/run_sub01_blue_03_04_15_50.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demos/logs/test again/png/outliers/run_sub01_red_03_04_15_45.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,5 +110,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
