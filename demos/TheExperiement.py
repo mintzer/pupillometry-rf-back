@@ -7,15 +7,15 @@ import pandas as pd
 from psychopy import visual, monitors, core, event
 from titta import Titta, helpers_tobii as helpers
 import time
-from logs_convertion import LogsConversion
+from logs_convertion import LogsConversion, IsCorrect
 
 global events_df, vars_df, start_time
 global tracker
 
 # %%  Monitor/geometry
 subject = '319314381'
-COLORS = ['red','blue']
-BLOCKS = 2
+COLORS = ['red','red', 'blue', 'blue']
+BLOCKS = 10
 #NON_DOMINANT = 'red'
 DOMINANT = 'blue'
 MY_MONITOR = 'testMonitor'  # needs to exists in PsychoPy monitor center
@@ -121,18 +121,19 @@ def main_loop(block_num):
         win.flip()
         update_log('events', {'Event': '!E TRIAL_EVENT_VAR stimulus_on',
                               'RecordingTimestamp': now_time()})
-        core.wait(1)
+        core.wait(2)
 
         win.flip()
         update_log('events', {'Event': '!E TRIAL_EVENT_VAR stimulus_off',
                               'RecordingTimestamp': now_time()})
+        core.wait(0.5)
+        win.flip()
         if color == DOMINANT:
             last_dominant = figure
             update = True
         if num != 1:
             if random.randint(1,10) == 10:
                 go = False
-
         update_log('vars', {'trial_id': str(num),
                            'figure': figure,
                            'border_color': color,
@@ -158,7 +159,7 @@ def main_loop(block_num):
                         'block': f'b_{block_num}'})
 
 def stop_and_save_logs():
-    global tracker, start_time, win
+    global tracker, start_time, win,  vars_df
     win.flip()
     tracker.stop_recording(gaze_data=True)
 
@@ -189,6 +190,8 @@ def stop_and_save_logs():
     input_df.to_csv(main_path + '_user_inputs.csv', sep=',', index=False)
     tbi_file = LogsConversion(main_path + '.csv')
     tbi_file.convert().save()
+    vars_df = IsCorrect(main_path + '_vars.csv')
+    vars_df.save()
 
 def show_summary():
     print(f'total time: {round(time.time() - start_time)} seconds\n\
