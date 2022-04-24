@@ -6,21 +6,21 @@ Saving calibration to file 1 for eye tracker with serial number X3120-0301077077
 calibration completed
 x
 True
-x
-False
-1.3009 	WARNING 	Requested an unavailable screen number - using first available.
-1.3019 	WARNING 	User requested fullscreen with size [1920 1080], but screen is actually [1707, 960]. Using actual size
-total time: 93 seconds
+y
+True
+1.6926 	WARNING 	Requested an unavailable screen number - using first available.
+1.6934 	WARNING 	User requested fullscreen with size [1920 1080], but screen is actually [1707, 960]. Using actual size
+total time: 141 seconds
           number of blocks: 2
 Current tracking mode: Default
 Compute and apply returned calibration_status_success and collected at 6 points.
 Saving calibration to file 1 for eye tracker with serial number X3120-030107707753.
 calibration completed
-x
+y
 True
 y
 True
-93.8775 	WARNING 	Requested an unavailable screen number - using first available.
-93.8779 	WARNING 	User requested fullscreen with size [1920 1080], but screen is actually [1707, 960]. Using actual size
-total time: 69 seconds
+139.0432 	WARNING 	Requested an unavailable screen number - using first available.
+139.0436 	WARNING 	User requested fullscreen with size [1920 1080], but screen is actually [1707, 960]. Using actual size
+total time: 60 seconds
           number of blocks: 2
