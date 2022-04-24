@@ -217,7 +217,7 @@ def main():
         tracker.init()
         DOMINANT = color
         visual.TextStim(win,
-                       text=f"ברוכה הבאה! <|*_*|>\nההוראה היא פשוטה ויחידה:\nלהחזיק כל הזמן בראש מה\nהייתה האות האחרונה בצבע {heb_colors[DOMINANT]}\n\nלחצי על כל כפתור כדי להמשיך",
+                       text=f"ברוכה הבאה! :)\nההוראה היא פשוטה ויחידה:\nלהחזיק כל הזמן בראש מה\nהייתה האות האחרונה בצבע {heb_colors[DOMINANT]}\n\nלחצי על כל כפתור כדי להמשיך",
                        languageStyle='RTL', color=DOMINANT).draw()
         win.flip()
         event.waitKeys()
