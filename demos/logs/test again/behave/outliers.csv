@@ -1,5 +1,0 @@
-participant_id,condition,outliers,Valid_Trials,fixation,stimulus_onset,stimulus_offset,Trial_Offset
-run_sub01_blue_03_04_15_50,no update,0,2,120,1020,2020,1800
-run_sub01_blue_03_04_15_50,update,0,2,112,1012,2012,1788
-run_sub01_red_03_04_15_45,no update,0,20,20,1027,-4,1695
-run_sub01_red_03_04_15_45,update,0,20,34,1042,420,1806

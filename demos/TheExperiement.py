@@ -7,16 +7,23 @@ import pandas as pd
 from psychopy import visual, monitors, core, event
 from titta import Titta, helpers_tobii as helpers
 import time
-from logs_convertion import LogsConversion
+from logs_convertion import LogsConversion, IsCorrect
 
 global events_df, vars_df, start_time
 global tracker
 
 # %%  Monitor/geometry
+<<<<<<< HEAD
 subject = '208488783'
 COLORS = ['red','blue']
 BLOCKS = 2
 NON_DOMINANT = 'red'
+=======
+subject = '319314381'
+COLORS = ['red','red', 'blue', 'blue']
+BLOCKS = 10
+#NON_DOMINANT = 'red'
+>>>>>>> 426f8800ea917224f45758682c6726262d9677cb
 DOMINANT = 'blue'
 MY_MONITOR = 'testMonitor'  # needs to exists in PsychoPy monitor center
 FULLSCREEN = True
@@ -121,18 +128,19 @@ def main_loop(block_num):
         win.flip()
         update_log('events', {'Event': '!E TRIAL_EVENT_VAR stimulus_on',
                               'RecordingTimestamp': now_time()})
-        core.wait(1)
+        core.wait(2)
 
         win.flip()
         update_log('events', {'Event': '!E TRIAL_EVENT_VAR stimulus_off',
                               'RecordingTimestamp': now_time()})
+        core.wait(0.5)
+        win.flip()
         if color == DOMINANT:
             last_dominant = figure
             update = True
         if num != 1:
             if random.randint(1,10) == 10:
                 go = False
-
         update_log('vars', {'trial_id': str(num),
                            'figure': figure,
                            'border_color': color,
@@ -158,7 +166,7 @@ def main_loop(block_num):
                         'block': f'b_{block_num}'})
 
 def stop_and_save_logs():
-    global tracker, start_time, win
+    global tracker, start_time, win,  vars_df
     win.flip()
     tracker.stop_recording(gaze_data=True)
 
@@ -189,6 +197,8 @@ def stop_and_save_logs():
     input_df.to_csv(main_path + '_user_inputs.csv', sep=',', index=False)
     tbi_file = LogsConversion(main_path + '.csv')
     tbi_file.convert().save()
+    vars_df = IsCorrect(main_path + '_vars.csv')
+    vars_df.save()
 
 def show_summary():
     print(f'total time: {round(time.time() - start_time)} seconds\n\
@@ -198,10 +208,10 @@ def main():
     global tracker, fixation_point, win, start_time, DOMINANT, vars_df, events_df, input_df
     from pathlib import Path
     Path(fr"logs/{subject}").mkdir(parents=True, exist_ok=True)
-    vars_df = pd.DataFrame()
-    events_df = pd.DataFrame()
-    input_df = pd.DataFrame()
     for color in COLORS:
+        vars_df = pd.DataFrame()
+        events_df = pd.DataFrame()
+        input_df = pd.DataFrame()
         start_time = time.time()
         win = visual.Window(monitor=mon, fullscr=FULLSCREEN,
                             screen=1, size=SCREEN_RES, units='deg')
@@ -212,7 +222,7 @@ def main():
         tracker.init()
         DOMINANT = color
         visual.TextStim(win,
-                       text=f"ברוכה הבאה לניסוי!\nההוראה היא פשוטה ויחידה:\nלהחזיק כל הזמן בראש מה\nהייתה האות האחרונה בצבע {heb_colors[DOMINANT]}\n\nלחצי על כל כפתור כדי להמשיך",
+                       text=f"ברוכה הבאה! <|*_*|>\nההוראה היא פשוטה ויחידה:\nלהחזיק כל הזמן בראש מה\nהייתה האות האחרונה בצבע {heb_colors[DOMINANT]}\n\nלחצי על כל כפתור כדי להמשיך",
                        languageStyle='RTL', color=DOMINANT).draw()
         win.flip()
         event.waitKeys()

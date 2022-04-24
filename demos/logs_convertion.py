@@ -30,8 +30,6 @@ class LogsConversion(object):
                         #'left_gaze_origin_validity'
              }
 
-
-
     def convert(self):
         self.file = self.file[(self.file['right_pupil_validity'] == 1) & (self.file['left_pupil_validity'] == 1)] # only trusted data
         self.file = self.file[list(self.names_conversion)] # keep only the relevant columns
@@ -42,5 +40,22 @@ class LogsConversion(object):
         self.file.to_csv(f'{self.path[:-4]}.tbi', index = False)
         return self
 
+
+class IsCorrect(object):
+    def __init__(self, filepath, sep=','):
+        self.path_vars = filepath
+        self.path_user_inputs = filepath[:-8] + 'user_inputs.csv'
+        self.vars_df = pd.read_csv(filepath, sep=sep)
+        self.user_inputs_df = pd.read_csv(self.path_user_inputs, sep=sep)
+        self.user_inputs_df = self.user_inputs_df[['block', 'is_correct']]
+        #print(self.user_inputs_df)
+        self.updated_vars_df = pd.merge(self.vars_df, self.user_inputs_df, on = 'block', how='left')
+
+    def save(self):
+        self.updated_vars_df.to_csv(self.path_vars, index = False)
+        return self
+
 #g = LogsConversion(r"C:\Python\Titta-master\demos\logs\testfile_11_11_21_14_18_44.tsv")
-#g.convert().save()
+
+#g = IsCorrect(r"C:\Python\Titta-master\demos\logs\319314381\run_red_07_04_15_32_vars.csv")
+#g.save()

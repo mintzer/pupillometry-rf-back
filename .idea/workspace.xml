@@ -4,14 +4,45 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cba21c33-3bf5-4b0e-8491-fce07d9f0809" name="Changes" comment="">
+    <list default="true" id="cba21c33-3bf5-4b0e-8491-fce07d9f0809" name="Changes" comment="Changes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/demos/1.bin" beforeDir="false" afterPath="$PROJECT_DIR$/demos/1.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/demos/TheExperiement.py" beforeDir="false" afterPath="$PROJECT_DIR$/demos/TheExperiement.py" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/demos/calibration_image1.png" beforeDir="false" afterPath="$PROJECT_DIR$/demos/calibration_image1.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/demos/run.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/demos/run.pkl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/demos/validation_image1.png" beforeDir="false" afterPath="$PROJECT_DIR$/demos/validation_image1.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/logs.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs/logs.txt" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/demos/logs/319314381/chap/run_blue_07_04_15_33.chp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demos/logs/319314381/chap/run_red_07_04_15_32.chp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demos/logs/319314381/run_blue_07_04_15_33.chp" beforeDir="false" afterPath="$PROJECT_DIR$/demos/logs/319314381/run_blue_07_04_15_33.chp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demos/logs/319314381/run_blue_07_04_15_33_vars.csv" beforeDir="false" afterPath="$PROJECT_DIR$/demos/logs/319314381/run_blue_07_04_15_33_vars.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demos/logs/319314381/run_red_07_04_15_32_vars.csv" beforeDir="false" afterPath="$PROJECT_DIR$/demos/logs/319314381/run_red_07_04_15_32_vars.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demos/logs/319314381/shalva/behave/time-course_data.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demos/logs/319314381/shalva/csv/outliers.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demos/logs/319314381/shalva/csv/time-course_data.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demos/logs/319314381/shalva/csv/trials_data.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demos/logs/319314381/shalva/csv/valid_trials.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demos/logs/319314381/shalva/fig/run_blue_07_04_15_33.fig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demos/logs/319314381/shalva/fig/run_red_07_04_15_32.fig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demos/logs/319314381/shalva/mat/run_blue_07_04_15_33.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demos/logs/319314381/shalva/mat/run_red_07_04_15_32.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demos/logs/319314381/shalva/png/run_blue_07_04_15_33.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demos/logs/319314381/shalva/png/run_red_07_04_15_32.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demos/logs/test/shay_shalva/behave/time-course_data.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demos/logs/test/shay_shalva/csv/outliers.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demos/logs/test/shay_shalva/csv/time-course_data.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demos/logs/test/shay_shalva/csv/trials_data.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demos/logs/test/shay_shalva/csv/valid_trials.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demos/logs/test/shay_shalva/fig/208488783.fig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demos/logs/test/shay_shalva/fig/319314381.fig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demos/logs/test/shay_shalva/mat/208488783.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demos/logs/test/shay_shalva/mat/319314381.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demos/logs/test/shay_shalva/png/208488783.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demos/logs/test/shay_shalva/png/319314381.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demos/logs_convertion.py" beforeDir="false" afterPath="$PROJECT_DIR$/demos/logs_convertion.py" afterDir="false" />
+>>>>>>> 426f8800ea917224f45758682c6726262d9677cb
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +66,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.logs_convertion">
     <configuration name="TheExperiement" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <output_file path="$PROJECT_DIR$/logs/logs.txt" is_save="true" />
       <module name="Titta-master" />
@@ -58,8 +89,30 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="logs_convertion" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Titta-master" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/demos" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/demos/logs_convertion.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.logs_convertion" />
         <item itemvalue="Python.TheExperiement" />
       </list>
     </recent_temporary>
@@ -85,5 +138,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
