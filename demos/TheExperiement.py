@@ -14,10 +14,10 @@ global tracker
 
 # %%  Monitor/geometry
 subject = '208488783'
-COLORS = ['red','blue']
+COLORS = ['blue','red']
 BLOCKS = 2
-NON_DOMINANT = 'red'
-DOMINANT = 'blue'
+# NON_DOMINANT = 'red'
+# DOMINANT = 'blue'
 MY_MONITOR = 'testMonitor'  # needs to exists in PsychoPy monitor center
 FULLSCREEN = True
 SCREEN_RES = [1920, 1080]
@@ -131,9 +131,11 @@ def main_loop(block_num):
         if color == DOMINANT:
             last_dominant = figure
             update = True
-        if num != 1:
-            if random.randint(1,10) == 10:
+        if num > 2:
+            if random.randint(1,5) == 1:
                 go = False
+        elif num > 15:
+            go = False
         update_log('vars', {'trial_id': str(num),
                            'figure': figure,
                            'border_color': color,
