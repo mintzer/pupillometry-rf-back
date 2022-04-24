@@ -13,17 +13,10 @@ global events_df, vars_df, start_time
 global tracker
 
 # %%  Monitor/geometry
-<<<<<<< HEAD
 subject = '208488783'
 COLORS = ['red','blue']
 BLOCKS = 2
 NON_DOMINANT = 'red'
-=======
-subject = '319314381'
-COLORS = ['red','red', 'blue', 'blue']
-BLOCKS = 10
-#NON_DOMINANT = 'red'
->>>>>>> 426f8800ea917224f45758682c6726262d9677cb
 DOMINANT = 'blue'
 MY_MONITOR = 'testMonitor'  # needs to exists in PsychoPy monitor center
 FULLSCREEN = True

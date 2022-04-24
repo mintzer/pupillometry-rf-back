@@ -1,8 +1,0 @@
-block,border_color,figure,is_color_change,is_figure_change,is_update,trial_id
-b_0,blue,X,,,,0
-b_0,red,Y,,,,1
-b_0,red,Y,,,,2
-b_0,blue,Y,,,,3
-b_0,red,X,,,,4
-b_0,red,X,,,,5
-b_0,blue,Y,,,,6
