@@ -13,9 +13,9 @@ global events_df, vars_df, start_time
 global tracker
 
 # %%  Monitor/geometry
-subject = '209154863'
-COLORS = ['blue', 'blue', 'red', 'red']
-BLOCKS = 8
+subject = '208561514'
+COLORS = ['red', 'blue', 'red', 'blue']
+BLOCKS = 10
 # NON_DOMINANT = 'red'
 # DOMINANT = 'blue'
 MY_MONITOR = 'testMonitor'  # needs to exists in PsychoPy monitor center
