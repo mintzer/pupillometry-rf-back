@@ -13,9 +13,9 @@ global events_df, vars_df, start_time
 global tracker
 
 # %%  Monitor/geometry
-subject = '208488783'
-COLORS = ['blue','red']
-BLOCKS = 2
+subject = '209154863'
+COLORS = ['blue', 'blue', 'red', 'red']
+BLOCKS = 8
 # NON_DOMINANT = 'red'
 # DOMINANT = 'blue'
 MY_MONITOR = 'testMonitor'  # needs to exists in PsychoPy monitor center
@@ -122,7 +122,7 @@ def main_loop(block_num):
         update_log('events', {'Event': '!E TRIAL_EVENT_VAR stimulus_on',
                               'RecordingTimestamp': now_time()})
         core.wait(2)
-
+        fixation_point.draw()
         win.flip()
         update_log('events', {'Event': '!E TRIAL_EVENT_VAR stimulus_off',
                               'RecordingTimestamp': now_time()})
