@@ -1,0 +1,5 @@
+block,is_correct,last_dominant,pressed_key
+b_0,incorrect,X,y
+b_1,incorrect,Y,x
+b_2,correct,X,x
+b_3,correct,Y,y
