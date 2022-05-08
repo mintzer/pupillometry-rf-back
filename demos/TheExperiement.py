@@ -136,7 +136,7 @@ def main_loop(block_num):
         if num > 2:
             if random.randint(1,10) == 1:
                 go = False
-        elif num > 15:
+        if num > 15:
             go = False
         update_log('vars', {'trial_id': str(num),
                            'figure': figure,
