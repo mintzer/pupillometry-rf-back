@@ -1,0 +1,3 @@
+participant_id,condition,outliers,Valid_Trials,fixation,stimulus_on,stimulus_off,Trial_Offset
+324124114,no update & correct,1,91,37,806,2271,2406
+324124114,update & correct,0,114,61,852,2335,2433
