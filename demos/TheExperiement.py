@@ -13,9 +13,9 @@ global events_df, vars_df, start_time
 global tracker
 
 # %%  Monitor/geometry
-subject = '209049931'
-COLORS = ['red', 'blue', 'red', 'blue', 'red', 'blue', 'red', 'blue']
-BLOCKS = 4
+subject = '208488783'
+COLORS = ['red']#, 'blue', 'red', 'blue', 'red', 'blue', 'red', 'blue']
+BLOCKS = 2
 # NON_DOMINANT = 'red'
 # DOMINANT = 'blue'
 MY_MONITOR = 'testMonitor'  # needs to exists in PsychoPy monitor center
@@ -93,10 +93,12 @@ def main_loop(block_num):
     last_dominant = ''
     event.waitKeys()
     while go:
+        first_step = False
         figure = random.choice(['X','Y'])
         color = random.choice(['blue','red'])
         if num == 0:
             color = DOMINANT
+            first_step = True
         update = False
         color_change = False
         figure_change = False
@@ -132,7 +134,7 @@ def main_loop(block_num):
             last_dominant = figure
             update = True
         if num > 2:
-            if random.randint(1,5) == 1:
+            if random.randint(1,10) == 1:
                 go = False
         elif num > 15:
             go = False
@@ -142,6 +144,8 @@ def main_loop(block_num):
                            'is_color_change': color_change,
                            'is_figure_change': figure_change,
                            'is_update': update,
+                           'is_first': first_step,
+                           'dominant': DOMINANT,
                            'block': f'b_{block_num}'})
         num += 1
         update_log('events',{
@@ -186,6 +190,7 @@ def stop_and_save_logs():
     vars_df['is_color_change'] = vars_df['is_color_change'].map({True: 'color_change', False: 'no_color_change'})
     vars_df['is_figure_change'] = vars_df['is_figure_change'].map({True: 'figure_change', False: 'no_figure_change'})
     vars_df['is_update'] = vars_df['is_update'].map({True: 'update', False: 'no_update'})
+    vars_df['is_first'] = vars_df['is_first'].map({True: 'first', False: 'not_first'})
     vars_df.to_csv(main_path + '_vars.csv', sep=',', index = False)
     #df_msg.to_csv(settings.FILENAME + '_msg' + timestamp + '.csv', sep='\t')
     input_df['is_correct'] = input_df['is_correct'].map({True: 'correct', False: 'incorrect'})
