@@ -1,0 +1,5 @@
+participant_id,condition,outliers,Valid_Trials,fixation,stimulus_on,stimulus_off,Trial_Offset
+209154863,color change & correct,0,71,44,1051,3014,3324
+209154863,no color change & correct,0,100,40,1048,2992,3342
+324124114,color change & correct,1,103,54,798,2189,2441
+324124114,no color change & correct,0,102,46,866,2425,2401
