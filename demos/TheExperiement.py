@@ -13,8 +13,9 @@ global events_df, vars_df, start_time
 global tracker
 
 # %%  Monitor/geometry
-subject = '208827162'
-COLORS = ['red', 'blue', 'red']
+subject = ''
+COLORS = ['red', 'red', 'red','blue','blue','blue']
+#COLORS = ['red', 'red','red']
 BLOCKS = 4
 # NON_DOMINANT = 'red'
 # DOMINANT = 'blue'
@@ -136,7 +137,7 @@ def main_loop(block_num):
         if num > 2:
             if random.randint(1,10) == 1:
                 go = False
-        if num >= 15:
+        if num >= 14:
             go = False
         update_log('vars', {'trial_id': str(num),
                            'figure': figure,
