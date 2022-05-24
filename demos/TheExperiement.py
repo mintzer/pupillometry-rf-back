@@ -13,8 +13,8 @@ global events_df, vars_df, start_time
 global tracker
 
 # %%  Monitor/geometry
-subject = ' '
-COLORS = ['red', 'red', 'red','blue','blue','blue']
+subject = '318881984'
+COLORS = ['red', 'red', 'red', 'blue','blue','blue']
 #COLORS = ['red', 'red','red']
 BLOCKS = 4
 # NON_DOMINANT = 'red'
