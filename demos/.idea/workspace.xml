@@ -1,15 +1,361 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4f5318a0-bb82-4c00-b71a-b69012b0c14c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/calibration_image1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testfile.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testfile.tsv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testfile_11_11_21_13_06_00.tsv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testfile_msg.tsv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testfile_msg_11_11_21_13_06_00.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/validation_image1.png" beforeDir="false" />
+    <list default="true" id="4f5318a0-bb82-4c00-b71a-b69012b0c14c" name="Changes" comment="Changes">
+      <change beforePath="$PROJECT_DIR$/.idea/demos.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/demos.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TheExperiement.py" beforeDir="false" afterPath="$PROJECT_DIR$/TheExperiement.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/206264582/run_blue_12_06_13_36.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/206264582/run_blue_12_06_13_36.tbi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/206264582/run_blue_12_06_13_36_events.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/206264582/run_blue_12_06_13_36_user_inputs.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/206264582/run_blue_12_06_13_36_vars.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/206264582/run_blue_12_06_13_40.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/206264582/run_blue_12_06_13_40.tbi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/206264582/run_blue_12_06_13_40_events.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/206264582/run_blue_12_06_13_40_user_inputs.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/206264582/run_blue_12_06_13_40_vars.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/206264582/run_blue_12_06_13_42.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/206264582/run_blue_12_06_13_42.tbi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/206264582/run_blue_12_06_13_42_events.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/206264582/run_blue_12_06_13_42_user_inputs.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/206264582/run_blue_12_06_13_42_vars.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/206264582/run_red_12_06_13_31.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/206264582/run_red_12_06_13_31.tbi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/206264582/run_red_12_06_13_31_events.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/206264582/run_red_12_06_13_31_user_inputs.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/206264582/run_red_12_06_13_31_vars.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/206264582/run_red_12_06_13_34.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/206264582/run_red_12_06_13_34.tbi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/206264582/run_red_12_06_13_34_events.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/206264582/run_red_12_06_13_34_user_inputs.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/206264582/run_red_12_06_13_34_vars.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/206993057/run_blue_08_05_12_59.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/206993057/run_blue_08_05_12_59.tbi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/206993057/run_blue_08_05_12_59_events.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/206993057/run_blue_08_05_12_59_user_inputs.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/206993057/run_blue_08_05_12_59_vars.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/206993057/run_blue_08_05_13_07.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/206993057/run_blue_08_05_13_07.tbi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/206993057/run_blue_08_05_13_07_events.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/206993057/run_blue_08_05_13_07_user_inputs.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/206993057/run_blue_08_05_13_07_vars.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/206993057/run_red_08_05_12_46.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/206993057/run_red_08_05_12_46.tbi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/206993057/run_red_08_05_12_46_events.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/206993057/run_red_08_05_12_46_user_inputs.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/206993057/run_red_08_05_12_46_vars.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/206993057/run_red_08_05_12_55.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/206993057/run_red_08_05_12_55.tbi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/206993057/run_red_08_05_12_55_events.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/206993057/run_red_08_05_12_55_user_inputs.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/206993057/run_red_08_05_12_55_vars.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/206993057/run_red_08_05_13_03.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/206993057/run_red_08_05_13_03.tbi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/206993057/run_red_08_05_13_03_events.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/206993057/run_red_08_05_13_03_user_inputs.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/206993057/run_red_08_05_13_03_vars.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/207601006/run_blue_08_05_11_36.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/207601006/run_blue_08_05_11_36.tbi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/207601006/run_blue_08_05_11_36_events.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/207601006/run_blue_08_05_11_36_user_inputs.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/207601006/run_blue_08_05_11_36_vars.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/207601006/run_blue_08_05_11_46.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/207601006/run_blue_08_05_11_46.tbi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/207601006/run_blue_08_05_11_46_events.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/207601006/run_blue_08_05_11_46_user_inputs.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/207601006/run_blue_08_05_11_46_vars.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/207601006/run_blue_08_05_11_56.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/207601006/run_blue_08_05_11_56.tbi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/207601006/run_blue_08_05_11_56_events.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/207601006/run_blue_08_05_11_56_user_inputs.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/207601006/run_blue_08_05_11_56_vars.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/207601006/run_red_08_05_11_31.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/207601006/run_red_08_05_11_31.tbi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/207601006/run_red_08_05_11_31_events.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/207601006/run_red_08_05_11_31_user_inputs.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/207601006/run_red_08_05_11_31_vars.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/207601006/run_red_08_05_11_40.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/207601006/run_red_08_05_11_40.tbi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/207601006/run_red_08_05_11_40_events.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/207601006/run_red_08_05_11_40_user_inputs.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/207601006/run_red_08_05_11_40_vars.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/207601006/run_red_08_05_11_51.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/207601006/run_red_08_05_11_51.tbi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/207601006/run_red_08_05_11_51_events.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/207601006/run_red_08_05_11_51_user_inputs.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/207601006/run_red_08_05_11_51_vars.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/207917279/run_red_17_05_15_25.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/207917279/run_red_17_05_15_25.tbi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/207917279/run_red_17_05_15_25_events.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/207917279/run_red_17_05_15_25_user_inputs.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/207917279/run_red_17_05_15_25_vars.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/208488783/208488783.chp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/208488783/208488783.tbi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/208488783/run_blue_17_05_13_41.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/208488783/run_blue_17_05_13_41.tbi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/208488783/run_blue_17_05_13_41_events.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/208488783/run_blue_17_05_13_41_user_inputs.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/208488783/run_blue_17_05_13_41_vars.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/208488783/run_blue_24_04_13_46.chp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/208488783/run_blue_24_04_13_46.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/208488783/run_blue_24_04_13_46.tbi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/208488783/run_blue_24_04_13_46_events.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/208488783/run_blue_24_04_13_46_user_inputs.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/208488783/run_blue_24_04_13_46_vars.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/208488783/run_blue_24_04_13_56.chp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/208488783/run_blue_24_04_13_56.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/208488783/run_blue_24_04_13_56.tbi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/208488783/run_blue_24_04_13_56_events.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/208488783/run_blue_24_04_13_56_user_inputs.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/208488783/run_blue_24_04_13_56_vars.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/208488783/run_red_08_05_10_58.chp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/208488783/run_red_08_05_10_58.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/208488783/run_red_08_05_10_58.tbi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/208488783/run_red_08_05_10_58_events.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/208488783/run_red_08_05_10_58_user_inputs.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/208488783/run_red_08_05_10_58_vars.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/208488783/run_red_17_05_13_39.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/208488783/run_red_17_05_13_39.tbi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/208488783/run_red_17_05_13_39_events.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/208488783/run_red_17_05_13_39_user_inputs.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/208488783/run_red_17_05_13_39_vars.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/208488783/run_red_24_04_13_06.chp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/208488783/run_red_24_04_13_06.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/208488783/run_red_24_04_13_06.tbi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/208488783/run_red_24_04_13_06_events.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/208488783/run_red_24_04_13_06_user_inputs.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/208488783/run_red_24_04_13_06_vars.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/208488783/run_red_24_04_13_49.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/208488783/run_red_24_04_13_49.tbi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/208488783/run_red_24_04_13_49_events.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/208488783/run_red_24_04_13_49_user_inputs.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/208488783/run_red_24_04_13_49_vars.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/208488783/run_red_24_04_13_58.chp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/208488783/run_red_24_04_13_58.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/208488783/run_red_24_04_13_58.tbi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/208488783/run_red_24_04_13_58_events.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/208488783/run_red_24_04_13_58_user_inputs.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/208488783/run_red_24_04_13_58_vars.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/208561514/run_blue_27_04_17_09.chp" beforeDir="false" afterPath="$PROJECT_DIR$/logs/208561514/run_blue_27_04_17_09.chp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/208561514/run_blue_27_04_17_09_vars.csv" beforeDir="false" afterPath="$PROJECT_DIR$/logs/208561514/run_blue_27_04_17_09_vars.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/208561514/run_blue_27_04_17_14.chp" beforeDir="false" afterPath="$PROJECT_DIR$/logs/208561514/run_blue_27_04_17_14.chp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/208561514/run_blue_27_04_17_14_vars.csv" beforeDir="false" afterPath="$PROJECT_DIR$/logs/208561514/run_blue_27_04_17_14_vars.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/208561514/run_red_27_04_17_18_vars.csv" beforeDir="false" afterPath="$PROJECT_DIR$/logs/208561514/run_red_27_04_17_18_vars.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/208561514/run_red_27_04_17_22_vars.csv" beforeDir="false" afterPath="$PROJECT_DIR$/logs/208561514/run_red_27_04_17_22_vars.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/208827162/run_blue_17_05_14_39.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/208827162/run_blue_17_05_14_39.tbi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/208827162/run_blue_17_05_14_39_events.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/208827162/run_blue_17_05_14_39_user_inputs.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/208827162/run_blue_17_05_14_39_vars.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/208827162/run_red_17_05_14_55.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/208827162/run_red_17_05_14_55.tbi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/208827162/run_red_17_05_14_55_events.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/208827162/run_red_17_05_14_55_user_inputs.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/208827162/run_red_17_05_14_55_vars.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/209049931/run_blue_01_05_12_05.chp" beforeDir="false" afterPath="$PROJECT_DIR$/logs/209049931/run_blue_01_05_12_05.chp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/209049931/run_blue_01_05_12_05_vars.csv" beforeDir="false" afterPath="$PROJECT_DIR$/logs/209049931/run_blue_01_05_12_05_vars.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/209049931/run_blue_01_05_12_11.chp" beforeDir="false" afterPath="$PROJECT_DIR$/logs/209049931/run_blue_01_05_12_11.chp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/209049931/run_blue_01_05_12_11_vars.csv" beforeDir="false" afterPath="$PROJECT_DIR$/logs/209049931/run_blue_01_05_12_11_vars.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/209049931/run_blue_01_05_12_16.chp" beforeDir="false" afterPath="$PROJECT_DIR$/logs/209049931/run_blue_01_05_12_16.chp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/209049931/run_blue_01_05_12_16_vars.csv" beforeDir="false" afterPath="$PROJECT_DIR$/logs/209049931/run_blue_01_05_12_16_vars.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/209049931/run_blue_01_05_12_21.chp" beforeDir="false" afterPath="$PROJECT_DIR$/logs/209049931/run_blue_01_05_12_21.chp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/209049931/run_blue_01_05_12_21_vars.csv" beforeDir="false" afterPath="$PROJECT_DIR$/logs/209049931/run_blue_01_05_12_21_vars.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/209049931/run_red_01_05_12_02.chp" beforeDir="false" afterPath="$PROJECT_DIR$/logs/209049931/run_red_01_05_12_02.chp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/209049931/run_red_01_05_12_02_vars.csv" beforeDir="false" afterPath="$PROJECT_DIR$/logs/209049931/run_red_01_05_12_02_vars.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/209049931/run_red_01_05_12_08.chp" beforeDir="false" afterPath="$PROJECT_DIR$/logs/209049931/run_red_01_05_12_08.chp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/209049931/run_red_01_05_12_08_vars.csv" beforeDir="false" afterPath="$PROJECT_DIR$/logs/209049931/run_red_01_05_12_08_vars.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/209049931/run_red_01_05_12_14.chp" beforeDir="false" afterPath="$PROJECT_DIR$/logs/209049931/run_red_01_05_12_14.chp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/209049931/run_red_01_05_12_14_vars.csv" beforeDir="false" afterPath="$PROJECT_DIR$/logs/209049931/run_red_01_05_12_14_vars.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/209049931/run_red_01_05_12_18.chp" beforeDir="false" afterPath="$PROJECT_DIR$/logs/209049931/run_red_01_05_12_18.chp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/209049931/run_red_01_05_12_18_vars.csv" beforeDir="false" afterPath="$PROJECT_DIR$/logs/209049931/run_red_01_05_12_18_vars.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/209154863/run_blue_27_04_16_09.chp" beforeDir="false" afterPath="$PROJECT_DIR$/logs/209154863/run_blue_27_04_16_09.chp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/209154863/run_blue_27_04_16_09_vars.csv" beforeDir="false" afterPath="$PROJECT_DIR$/logs/209154863/run_blue_27_04_16_09_vars.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/209154863/run_blue_27_04_16_14.chp" beforeDir="false" afterPath="$PROJECT_DIR$/logs/209154863/run_blue_27_04_16_14.chp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/209154863/run_blue_27_04_16_14_vars.csv" beforeDir="false" afterPath="$PROJECT_DIR$/logs/209154863/run_blue_27_04_16_14_vars.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/209154863/run_blue_27_04_16_20.chp" beforeDir="false" afterPath="$PROJECT_DIR$/logs/209154863/run_blue_27_04_16_20.chp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/209154863/run_blue_27_04_16_20_vars.csv" beforeDir="false" afterPath="$PROJECT_DIR$/logs/209154863/run_blue_27_04_16_20_vars.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/209154863/run_red_27_04_16_06.chp" beforeDir="false" afterPath="$PROJECT_DIR$/logs/209154863/run_red_27_04_16_06.chp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/209154863/run_red_27_04_16_06_vars.csv" beforeDir="false" afterPath="$PROJECT_DIR$/logs/209154863/run_red_27_04_16_06_vars.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/209154863/run_red_27_04_16_12.chp" beforeDir="false" afterPath="$PROJECT_DIR$/logs/209154863/run_red_27_04_16_12.chp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/209154863/run_red_27_04_16_12_vars.csv" beforeDir="false" afterPath="$PROJECT_DIR$/logs/209154863/run_red_27_04_16_12_vars.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/209154863/run_red_27_04_16_17.chp" beforeDir="false" afterPath="$PROJECT_DIR$/logs/209154863/run_red_27_04_16_17.chp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/209154863/run_red_27_04_16_17_vars.csv" beforeDir="false" afterPath="$PROJECT_DIR$/logs/209154863/run_red_27_04_16_17_vars.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/209862689/run_red_12_06_14_17.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/209862689/run_red_12_06_14_17.tbi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/209862689/run_red_12_06_14_17_events.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/209862689/run_red_12_06_14_17_user_inputs.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/209862689/run_red_12_06_14_17_vars.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/313162711/run_blue_24_05_17_01.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/313162711/run_blue_24_05_17_01.tbi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/313162711/run_blue_24_05_17_01_events.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/313162711/run_blue_24_05_17_01_user_inputs.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/313162711/run_blue_24_05_17_01_vars.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/313162711/run_blue_24_05_17_04.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/313162711/run_blue_24_05_17_04.tbi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/313162711/run_blue_24_05_17_04_events.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/313162711/run_blue_24_05_17_04_user_inputs.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/313162711/run_blue_24_05_17_04_vars.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/313162711/run_red_24_05_17_07.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/313162711/run_red_24_05_17_07.tbi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/313162711/run_red_24_05_17_07_events.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/313162711/run_red_24_05_17_07_user_inputs.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/313162711/run_red_24_05_17_07_vars.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/313162711/run_red_24_05_17_11.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/313162711/run_red_24_05_17_11.tbi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/313162711/run_red_24_05_17_11_events.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/313162711/run_red_24_05_17_11_user_inputs.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/313162711/run_red_24_05_17_11_vars.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/313162711/run_red_24_05_17_14.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/313162711/run_red_24_05_17_14.tbi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/313162711/run_red_24_05_17_14_events.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/313162711/run_red_24_05_17_14_user_inputs.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/313162711/run_red_24_05_17_14_vars.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/314919309/run_blue_17_05_14_13.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/314919309/run_blue_17_05_14_13.tbi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/314919309/run_blue_17_05_14_13_events.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/314919309/run_blue_17_05_14_13_user_inputs.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/314919309/run_blue_17_05_14_13_vars.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/318657061/run_blue_08_05_13_33.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/318657061/run_blue_08_05_13_33.tbi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/318657061/run_blue_08_05_13_33_events.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/318657061/run_blue_08_05_13_33_user_inputs.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/318657061/run_blue_08_05_13_33_vars.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/318881984/run_blue_24_05_18_49.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/318881984/run_blue_24_05_18_49.tbi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/318881984/run_blue_24_05_18_49_events.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/318881984/run_blue_24_05_18_49_user_inputs.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/318881984/run_blue_24_05_18_49_vars.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/318881984/run_blue_24_05_18_53.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/318881984/run_blue_24_05_18_53.tbi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/318881984/run_blue_24_05_18_53_events.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/318881984/run_blue_24_05_18_53_user_inputs.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/318881984/run_blue_24_05_18_53_vars.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/318881984/run_blue_24_05_18_57.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/318881984/run_blue_24_05_18_57.tbi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/318881984/run_blue_24_05_18_57_events.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/318881984/run_blue_24_05_18_57_user_inputs.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/318881984/run_blue_24_05_18_57_vars.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/318881984/run_red_24_05_18_38.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/318881984/run_red_24_05_18_38.tbi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/318881984/run_red_24_05_18_38_events.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/318881984/run_red_24_05_18_38_user_inputs.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/318881984/run_red_24_05_18_38_vars.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/318881984/run_red_24_05_18_41.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/318881984/run_red_24_05_18_41.tbi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/318881984/run_red_24_05_18_41_events.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/318881984/run_red_24_05_18_41_user_inputs.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/318881984/run_red_24_05_18_41_vars.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/324124114/run_blue_01_05_11_41.chp" beforeDir="false" afterPath="$PROJECT_DIR$/logs/324124114/run_blue_01_05_11_41.chp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/324124114/run_blue_01_05_11_41_vars.csv" beforeDir="false" afterPath="$PROJECT_DIR$/logs/324124114/run_blue_01_05_11_41_vars.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/324124114/run_blue_01_05_11_47.chp" beforeDir="false" afterPath="$PROJECT_DIR$/logs/324124114/run_blue_01_05_11_47.chp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/324124114/run_blue_01_05_11_47_vars.csv" beforeDir="false" afterPath="$PROJECT_DIR$/logs/324124114/run_blue_01_05_11_47_vars.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/324124114/run_blue_01_05_11_52.chp" beforeDir="false" afterPath="$PROJECT_DIR$/logs/324124114/run_blue_01_05_11_52.chp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/324124114/run_blue_01_05_11_52_vars.csv" beforeDir="false" afterPath="$PROJECT_DIR$/logs/324124114/run_blue_01_05_11_52_vars.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/324124114/run_blue_01_05_11_55.chp" beforeDir="false" afterPath="$PROJECT_DIR$/logs/324124114/run_blue_01_05_11_55.chp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/324124114/run_blue_01_05_11_55_vars.csv" beforeDir="false" afterPath="$PROJECT_DIR$/logs/324124114/run_blue_01_05_11_55_vars.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/324124114/run_red_01_05_11_38.chp" beforeDir="false" afterPath="$PROJECT_DIR$/logs/324124114/run_red_01_05_11_38.chp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/324124114/run_red_01_05_11_38_vars.csv" beforeDir="false" afterPath="$PROJECT_DIR$/logs/324124114/run_red_01_05_11_38_vars.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/324124114/run_red_01_05_11_44.chp" beforeDir="false" afterPath="$PROJECT_DIR$/logs/324124114/run_red_01_05_11_44.chp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/324124114/run_red_01_05_11_44_vars.csv" beforeDir="false" afterPath="$PROJECT_DIR$/logs/324124114/run_red_01_05_11_44_vars.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/324124114/run_red_01_05_11_54.chp" beforeDir="false" afterPath="$PROJECT_DIR$/logs/324124114/run_red_01_05_11_54.chp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/324124114/run_red_01_05_11_54_vars.csv" beforeDir="false" afterPath="$PROJECT_DIR$/logs/324124114/run_red_01_05_11_54_vars.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/finals/209154863.chp" beforeDir="false" afterPath="$PROJECT_DIR$/logs/finals/209154863.chp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/finals/324124114.chp" beforeDir="false" afterPath="$PROJECT_DIR$/logs/finals/324124114.chp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/finals/5.1/behave/outliers.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/finals/5.1/behave/time-course_data.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/finals/5.1/csv/outliers.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/finals/5.1/csv/time-course_data.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/finals/5.1/csv/trials_data.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/finals/5.1/csv/valid_trials.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/finals/5.1/fig/324124114.fig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/finals/5.1/fig/outliers/209154863.fig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/finals/5.1/mat/324124114.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/finals/5.1/mat/outliers/209154863.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/finals/5.1/png/324124114.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/finals/5.1/png/outliers/209154863.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/finals/5.1_2/behave/time-course_data.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/finals/5.1_2/csv/outliers.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/finals/5.1_2/csv/time-course_data.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/finals/5.1_2/csv/trials_data.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/finals/5.1_2/csv/valid_trials.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/finals/5.1_2/fig/209154863.fig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/finals/5.1_2/fig/324124114.fig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/finals/5.1_2/fig/total.fig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/finals/5.1_2/mat/209154863.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/finals/5.1_2/mat/324124114.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/finals/5.1_2/png/209154863.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/finals/5.1_2/png/324124114.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/finals/5.1_2/png/total.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/finals/5.1_2/properties.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/finals/5.1_2/stat/no update &amp; correct vs update &amp; correct.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/finals/5.1_2/total.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/finals/chap/209154863.chp" beforeDir="false" afterPath="$PROJECT_DIR$/logs/finals/chap/209154863.chp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/finals/chap/324124114.chp" beforeDir="false" afterPath="$PROJECT_DIR$/logs/finals/chap/324124114.chp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/finals/color/behave/time-course_data.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/finals/color/csv/outliers.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/finals/color/csv/time-course_data.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/finals/color/csv/trials_data.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/finals/color/csv/valid_trials.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/finals/color/fig/209154863.fig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/finals/color/fig/324124114.fig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/finals/color/fig/total.fig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/finals/color/mat/209154863.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/finals/color/mat/324124114.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/finals/color/png/209154863.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/finals/color/png/324124114.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/finals/color/png/total.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/finals/color/properties.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/finals/color/stat/no color change &amp; no update &amp; correct vs no color change &amp; update &amp; correct.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/finals/color/total.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/finals/color_change/behave/time-course_data.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/finals/color_change/csv/outliers.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/finals/color_change/csv/time-course_data.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/finals/color_change/csv/trials_data.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/finals/color_change/csv/valid_trials.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/finals/color_change/fig/209154863.fig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/finals/color_change/fig/324124114.fig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/finals/color_change/fig/total.fig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/finals/color_change/mat/209154863.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/finals/color_change/mat/324124114.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/finals/color_change/png/209154863.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/finals/color_change/png/324124114.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/finals/color_change/png/total.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/finals/color_change/properties.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/finals/color_change/stat/color change &amp; correct vs no color change &amp; correct.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/finals/color_change/total.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/finals/outliers/209049931.chp" beforeDir="false" afterPath="$PROJECT_DIR$/logs/finals/outliers/209049931.chp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/run_blue_17_05_15_51.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/run_blue_17_05_15_51.tbi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/run_blue_17_05_15_51_events.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/run_blue_17_05_15_51_user_inputs.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/run_blue_17_05_15_51_vars.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/run_blue_17_05_15_54.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/run_blue_17_05_15_54.tbi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/run_blue_17_05_15_54_events.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/run_blue_17_05_15_54_user_inputs.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/run_blue_17_05_15_54_vars.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/run_blue_17_05_15_57.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/run_blue_17_05_15_57.tbi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/run_blue_17_05_15_57_events.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/run_blue_17_05_15_57_user_inputs.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/run_blue_17_05_15_57_vars.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/run_red_17_05_15_42.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/run_red_17_05_15_42.tbi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/run_red_17_05_15_42_events.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/run_red_17_05_15_42_user_inputs.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/run_red_17_05_15_42_vars.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/run_red_17_05_15_46.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/run_red_17_05_15_46.tbi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/run_red_17_05_15_46_events.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/run_red_17_05_15_46_user_inputs.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/run_red_17_05_15_46_vars.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/run_red_17_05_15_48.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/run_red_17_05_15_48.tbi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/run_red_17_05_15_48_events.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/run_red_17_05_15_48_user_inputs.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/run_red_17_05_15_48_vars.csv" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -13,8 +13,9 @@ global events_df, vars_df, start_time
 global tracker
 
 # %%  Monitor/geometry
-subject = '306346313'
-COLORS = ['blue', 'red', 'red', 'red']
+subject = ' '
+COLORS = ['red', 'red', 'red', 'red']
+#COLORS = ['blue', 'blue', 'blue', 'blue']
 #COLORS = ['blue', 'red']
 BLOCKS = 4
 # NON_DOMINANT = 'red'
@@ -96,7 +97,11 @@ def main_loop(block_num):
     while go:
         first_step = False
         figure = random.choice(['X','Y'])
-        color = random.choice(['blue','red'])
+        if last_color != '':
+            # 5:3 ratio
+            color = random.choice(['blue', 'red', 'blue', 'red', 'blue', 'red', last_color, last_color])
+        else:
+            color = random.choice(['blue', 'red'])
         if num == 0:
             color = DOMINANT
             first_step = True
@@ -117,20 +122,30 @@ def main_loop(block_num):
         update_log('events',{'Event': '!E TRIAL_EVENT_VAR fixation',
                              'RecordingTimestamp': now_time()})
         core.wait(1)
-
+        # record the start time of the trial
+        start_time = time.time()
         visual.TextStim(win,text=figure, color=color, height=4.5).draw()
         #visual.Rect(win, size=(4,4), lineColor=color).draw()
         #print(time.time())
         win.flip()
         update_log('events', {'Event': '!E TRIAL_EVENT_VAR stimulus_on',
                               'RecordingTimestamp': now_time()})
-        core.wait(2)
+        # wait for the user to press X or Y
+        pressed_key = event.waitKeys(keyList=['x', 'y'])
+
+        #core.wait(2)
         fixation_point.draw()
         win.flip()
+        time_passed = time.time() - start_time # in seconds
+        time_left = 3.5 - time_passed
+        core.wait(time_left)
         update_log('events', {'Event': '!E TRIAL_EVENT_VAR stimulus_off',
                               'RecordingTimestamp': now_time()})
-        core.wait(0.5)
-        win.flip()
+        # fixation to complete 3 seconds from the start of the trial
+        # calculate the time that has passed since the start of the trial
+        # and wait for the remaining time to complete 3 seconds
+
+        #win.flip()
         if color == DOMINANT:
             last_dominant = figure
             update = True
@@ -146,6 +161,8 @@ def main_loop(block_num):
                            'is_figure_change': figure_change,
                            'is_update': update,
                            'is_first': first_step,
+                           'pressed_key': pressed_key[0],
+                           'rt': time_passed,
                            'dominant': DOMINANT,
                            'block': f'b_{block_num}'})
         num += 1

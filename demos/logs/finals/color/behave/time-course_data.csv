@@ -1,5 +1,0 @@
-participant_id,condition,outliers,Valid_Trials,fixation,stimulus_on,stimulus_off,Trial_Offset
-209154863,no color change & no update & correct,0,33,79,1086,2999,3295
-209154863,no color change & update & correct,0,67,20,1029,2989,3365
-324124114,no color change & no update & correct,0,31,17,813,2398,2352
-324124114,no color change & update & correct,0,71,59,890,2437,2423
