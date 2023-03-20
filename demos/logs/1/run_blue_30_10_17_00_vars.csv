@@ -1,0 +1,4 @@
+block,border_color,dominant,figure,is_color_change,is_figure_change,is_first,is_update,trial_id,is_correct
+b_0,blue,blue,Y,no_color_change,no_figure_change,first,update,0,incorrect
+b_0,blue,blue,Y,no_color_change,no_figure_change,not_first,update,1,incorrect
+b_0,blue,blue,X,no_color_change,figure_change,not_first,update,2,incorrect

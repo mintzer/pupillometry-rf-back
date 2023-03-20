@@ -13,9 +13,12 @@ global events_df, vars_df, start_time
 global tracker
 
 # %%  Monitor/geometry
-subject = '306346313'
+# ID of the subject - the name of the folder that the data would be save on
+subject = '1'
+# the series of the colors conditions
 COLORS = ['blue', 'red', 'red', 'red']
 #COLORS = ['blue', 'red']
+# number of blocks
 BLOCKS = 4
 # NON_DOMINANT = 'red'
 # DOMINANT = 'blue'
@@ -36,7 +39,7 @@ mon.setSizePix(SCREEN_RES)
 #im_name = 'im1.jpeg'
 
 # %%  ET settings
-et_name = 'Tobii Pro X3-120 EPU'
+et_name = 'Tobii Pro X3-120' # EPU
 # et_name = 'IS4_Large_Peripheral'
 # et_name = 'Tobii Pro Nano'
 
@@ -82,21 +85,30 @@ def now_time():
 # main loop
 def main_loop(block_num):
     global events_df, vars_df, start_time, fixation_point, win
+    #prints text to the screen
     visual.TextStim(win,
                     text=f"ברוכה הבאה לבלוק מספר {block_num + 1}!\nתזכורת: בכל רגע נתון תצטרכי לזכור\nמה היא האות האחרונה\nשהופיעה בצבע {heb_colors[DOMINANT]}\n\nלחצי על כל כפתור כדי להמשיך",
                     languageStyle='RTL',
                     color=DOMINANT).draw()
+    # updates the screen
     win.flip()
+
+    # initial vars
     go = True
     num = 0
     last_color = ''
     last_figure = ''
     last_dominant = ''
     event.waitKeys()
+    # until go == False
     while go:
         first_step = False
+        # DEFINE TASK PARAMETERS ---
+        # randomly choosing figure
         figure = random.choice(['X','Y'])
+        # randomly choosing color
         color = random.choice(['blue','red'])
+        # if first step in the block: Dominant color + save it to the logs
         if num == 0:
             color = DOMINANT
             first_step = True
@@ -105,31 +117,48 @@ def main_loop(block_num):
         figure_change = False
         if figure != last_figure and last_figure != '':
             figure_change = True
+        # saving the last figure for next iteration
         last_figure = figure
 
         if color != last_color and last_color != '':
             color_change = True
+        # saving the last color for next iteration
         last_color = color
+        # STEP 1 - INITIAL FIXATION
+        # drawing fixation point
         fixation_point.draw()
+        # updates the screen
         win.flip()
+        # updating the events log
         update_log('events', {'Event': 'TRIALID',
                               'RecordingTimestamp': now_time()})
         update_log('events',{'Event': '!E TRIAL_EVENT_VAR fixation',
                              'RecordingTimestamp': now_time()})
+        # letting the fixation point appear 1 second
         core.wait(1)
 
+        # STEP 2 - DRAWING STIMULUS
         visual.TextStim(win,text=figure, color=color, height=4.5).draw()
         #visual.Rect(win, size=(4,4), lineColor=color).draw()
         #print(time.time())
+        # updates the screen
         win.flip()
+        # updating the events log
         update_log('events', {'Event': '!E TRIAL_EVENT_VAR stimulus_on',
                               'RecordingTimestamp': now_time()})
+        # letting the letter appear 2 second
         core.wait(2)
+
+        # STEP 3 - FIXATION POINT
         fixation_point.draw()
+        # updates the screen
         win.flip()
         update_log('events', {'Event': '!E TRIAL_EVENT_VAR stimulus_off',
                               'RecordingTimestamp': now_time()})
+        # letting the fixation point appear 0.5 second
         core.wait(0.5)
+
+        # STEP 4 - TRIAL RESET  ANG LOGGING
         win.flip()
         if color == DOMINANT:
             last_dominant = figure
@@ -153,11 +182,12 @@ def main_loop(block_num):
             'Event': 'TRIAL_END',
             'RecordingTimestamp': now_time()})
 
+    # STEP 5 - PROBE ( OUT OF LOOP)
     visual.TextStim(win, text=f"מה האות האחרונה שהופיעה ב{heb_colors[DOMINANT]}?", languageStyle='RTL', color=DOMINANT).draw()
     # add input from user
     # drop block when user got wrong answer
     win.flip()
-    key = event.waitKeys()[0]
+    key = event.waitKeys()[0] # waiting for input
     print(key)
     print(str.lower(key) == str.lower(last_dominant))
     update_log('input', {'pressed_key': key,
@@ -182,10 +212,11 @@ def stop_and_save_logs():
     main_path = f'{LOG_FOLDER_PATH}{subject}/{settings.FILENAME}_{DOMINANT}_{timestamp}'
     #  Save data and messages
     df = pd.DataFrame(gaze_data, columns=tracker.header)
+    #print(df)
     df['UTC'] = df['UTC'].apply(lambda x: str(round(1000 * (x - start_time))))
     df.to_csv(main_path + '.csv', sep=',', index = False)
     #df.to_csv(settings.FILENAME + timestamp + '.csv', sep=',')
-
+    #print(events_df)
     #df_msg = pd.DataFrame(msg_data, columns=['system_time_stamp', 'msg'])
     events_df.to_csv(main_path + '_events.csv', sep=',', index = False)
     vars_df['is_color_change'] = vars_df['is_color_change'].map({True: 'color_change', False: 'no_color_change'})
