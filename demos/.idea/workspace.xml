@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="4f5318a0-bb82-4c00-b71a-b69012b0c14c" name="Changes" comment="" />
+=======
+    <list default="true" id="4f5318a0-bb82-4c00-b71a-b69012b0c14c" name="Changes" comment="Changes" />
+>>>>>>> refs/remotes/origin/master
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

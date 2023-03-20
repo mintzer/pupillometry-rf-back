@@ -1,0 +1,33 @@
+participant_id,condition,outliers,Valid_Trials,fixation,stimulus_on,stimulus_off,Trial_Offset
+206264582,color change & not first & no update & correct,0,9,251,1258,3263,2617
+206264582,color change & not first & update & correct,0,8,62,1069,3074,2325
+206264582,no color change & not first & no update & correct,1,9,364,1371,3376,2989
+206264582,no color change & not first & update & correct,0,5,10,1017,3022,3085
+206993057,color change & not first & no update & correct,0,31,151,996,2678,2215
+206993057,color change & not first & update & correct,0,22,24,863,2462,2188
+206993057,no color change & not first & no update & correct,0,22,64,855,2359,2327
+206993057,no color change & not first & update & correct,0,31,31,973,2751,2260
+207601006,color change & not first & no update & correct,0,29,46,1054,3059,2463
+207601006,color change & not first & update & correct,0,22,57,1064,2753,2468
+207601006,no color change & not first & no update & correct,0,24,22,1030,2908,2701
+207601006,no color change & not first & update & correct,0,24,80,1087,2945,2522
+207917279,color change & not first & no update & correct,0,20,164,1171,3177,2595
+207917279,color change & not first & update & correct,0,15,73,1080,3086,2700
+207917279,no color change & not first & no update & correct,0,24,32,1039,3044,2807
+207917279,no color change & not first & update & correct,0,3,37,1044,3049,2150
+208488783,color change & not first & no update & correct,0,10,15,1022,3028,3008
+208488783,color change & not first & update & correct,0,8,22,1029,3035,3028
+208488783,no color change & not first & no update & correct,0,6,39,1046,3052,3163
+208488783,no color change & not first & update & correct,0,18,41,1048,3054,2886
+208827162,color change & not first & no update & correct,0,39,36,1043,2968,2519
+208827162,color change & not first & update & correct,0,26,173,1181,3186,2398
+208827162,no color change & not first & no update & correct,0,45,62,1069,2862,2454
+208827162,no color change & not first & update & correct,0,41,55,1063,2920,2327
+313162711,color change & not first & no update & correct,0,6,64,1071,1942,1275
+313162711,color change & not first & update & correct,0,5,232,1022,1830,1135
+313162711,no color change & not first & no update & correct,0,4,42,1049,2298,1538
+313162711,no color change & not first & update & correct,0,5,279,1288,3293,1405
+318881984,color change & not first & no update & correct,0,9,60,1068,3073,2511
+318881984,color change & not first & update & correct,0,6,66,1074,2569,2383
+318881984,no color change & not first & no update & correct,0,1,3,1009,3014,2825
+318881984,no color change & not first & update & correct,0,13,162,1169,2922,2431

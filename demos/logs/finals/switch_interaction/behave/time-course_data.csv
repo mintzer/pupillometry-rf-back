@@ -1,0 +1,37 @@
+participant_id,condition,outliers,Valid_Trials,fixation,stimulus_on,stimulus_off,Trial_Offset
+207280074,color change & not first & no update & correct,0,50,45,940,2658,2524
+207280074,color change & not first & update & correct,0,40,32,926,2585,2441
+207280074,no color change & not first & no update & correct,0,42,37,972,2762,2373
+207280074,no color change & not first & update & correct,0,54,58,944,2624,2627
+208278119,color change & not first & no update & correct,0,54,37,1044,2993,2889
+208278119,color change & not first & update & correct,0,44,100,1107,3112,2840
+208278119,no color change & not first & no update & correct,0,32,77,1052,2995,2907
+208278119,no color change & not first & update & correct,0,53,48,1055,3060,2875
+209049931,color change & not first & no update & correct,0,49,115,1123,3065,2519
+209049931,color change & not first & update & correct,0,36,27,1034,2956,2494
+209049931,no color change & not first & no update & correct,0,44,51,1059,2993,2215
+209049931,no color change & not first & update & correct,0,53,77,1084,2855,2493
+209154863,color change & not first & no update & correct,0,41,57,1064,2992,3267
+209154863,color change & not first & update & correct,0,30,24,1031,3037,3396
+209154863,no color change & not first & no update & correct,0,33,81,1088,2999,3288
+209154863,no color change & not first & update & correct,0,44,23,1031,3036,3420
+211335542,color change & not first & no update & correct,0,66,46,1054,3060,3035
+211335542,color change & not first & update & correct,0,52,37,1045,2993,2892
+211335542,no color change & not first & no update & correct,0,57,35,1043,2938,3003
+211335542,no color change & not first & update & correct,0,52,38,1046,2992,3155
+306346313,color change & not first & no update & correct,0,71,183,1191,2812,1451
+306346313,color change & not first & update & correct,0,61,142,1149,2570,1209
+306346313,no color change & not first & no update & correct,0,53,119,1083,2697,1613
+306346313,no color change & not first & update & correct,0,56,131,1139,2381,1186
+314919309,color change & not first & no update & correct,0,48,46,1053,3058,2907
+314919309,color change & not first & update & correct,0,37,93,1100,3016,2694
+314919309,no color change & not first & no update & correct,0,43,53,1061,2994,2890
+314919309,no color change & not first & update & correct,0,44,175,1183,3115,2846
+318657061,color change & not first & no update & correct,0,85,39,1047,3013,3001
+318657061,color change & not first & update & correct,0,73,101,1109,3065,2924
+318657061,no color change & not first & no update & correct,0,89,60,1055,2969,2982
+318657061,no color change & not first & update & correct,0,70,79,1087,2958,3030
+324124114,color change & not first & no update & correct,1,60,47,803,2206,2434
+324124114,color change & not first & update & correct,0,43,65,791,2166,2451
+324124114,no color change & not first & no update & correct,0,31,17,813,2398,2352
+324124114,no color change & not first & update & correct,0,45,53,893,2530,2427

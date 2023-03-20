@@ -1,0 +1,2 @@
+Z_outliers,missing_values,min_trials,interpolation_type,bins,from,to,pre_event_ms,relative,method,baseline,scattering,event_1,event_2,event_3,var_1,var_2
+2.5,20,30,Linear Interpolation,1,Trial_Onset,Trial_Offset,0,percentage,arbitrary units,1000,no,fixation,stimulus_on,stimulus_off,color change & not first & update & correct,no color change & not first & no update & correct

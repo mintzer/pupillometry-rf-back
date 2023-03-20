@@ -1,0 +1,19 @@
+participant_id,condition,outliers,Valid_Trials,fixation,stimulus_on,stimulus_off,Trial_Offset
+206993057,not first & no update & correct,0,53,116,939,2549,2261
+206993057,not first & update & correct,0,53,28,928,2635,2231
+207280074,not first & no update & correct,0,92,41,954,2706,2454
+207280074,not first & update & correct,0,94,47,937,2608,2548
+207601006,not first & no update & correct,0,53,35,1043,2989,2573
+207601006,not first & update & correct,0,46,69,1076,2853,2496
+208827162,not first & no update & correct,0,84,50,1057,2911,2484
+208827162,not first & update & correct,0,67,101,1109,3023,2354
+209049931,not first & no update & correct,0,93,85,1092,3031,2376
+209049931,not first & update & correct,0,89,56,1064,2896,2493
+209154863,not first & no update & correct,0,74,68,1075,2995,3276
+209154863,not first & update & correct,0,74,24,1031,3036,3410
+314919309,not first & no update & correct,0,91,50,1057,3028,2899
+314919309,not first & update & correct,0,81,138,1146,3070,2778
+318657061,not first & no update & correct,0,174,50,1051,2991,2991
+318657061,not first & update & correct,0,143,91,1098,3013,2976
+324124114,not first & no update & correct,1,91,37,806,2271,2406
+324124114,not first & update & correct,0,88,59,843,2352,2439

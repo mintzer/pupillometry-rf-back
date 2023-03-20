@@ -13,10 +13,11 @@ global events_df, vars_df, start_time
 global tracker
 
 # %%  Monitor/geometry
-# ID of the subject - the name of the folder that the data would be save on
-subject = '1'
-# the series of the colors conditions
-COLORS = ['blue', 'red', 'red', 'red']
+
+subject = ' '
+COLORS = ['red', 'red', 'red', 'red']
+#COLORS = ['blue', 'blue', 'blue', 'blue']
+
 #COLORS = ['blue', 'red']
 # number of blocks
 BLOCKS = 4
@@ -106,9 +107,12 @@ def main_loop(block_num):
         # DEFINE TASK PARAMETERS ---
         # randomly choosing figure
         figure = random.choice(['X','Y'])
-        # randomly choosing color
-        color = random.choice(['blue','red'])
-        # if first step in the block: Dominant color + save it to the logs
+
+        if last_color != '':
+            # 5:3 ratio
+            color = random.choice(['blue', 'red', 'blue', 'red', 'blue', 'red', last_color, last_color])
+        else:
+            color = random.choice(['blue', 'red'])
         if num == 0:
             color = DOMINANT
             first_step = True
@@ -138,6 +142,9 @@ def main_loop(block_num):
         core.wait(1)
 
         # STEP 2 - DRAWING STIMULUS
+        # record the start time of the trial
+        start_time = time.time()
+
         visual.TextStim(win,text=figure, color=color, height=4.5).draw()
         #visual.Rect(win, size=(4,4), lineColor=color).draw()
         #print(time.time())
@@ -146,20 +153,26 @@ def main_loop(block_num):
         # updating the events log
         update_log('events', {'Event': '!E TRIAL_EVENT_VAR stimulus_on',
                               'RecordingTimestamp': now_time()})
-        # letting the letter appear 2 second
-        core.wait(2)
 
-        # STEP 3 - FIXATION POINT
+        # wait for the user to press X or Y
+        pressed_key = event.waitKeys(keyList=['x', 'y'])
+
+        #core.wait(2)
         fixation_point.draw()
         # updates the screen
         win.flip()
+        time_passed = time.time() - start_time # in seconds
+        time_left = 3.5 - time_passed
+        core.wait(time_left)
         update_log('events', {'Event': '!E TRIAL_EVENT_VAR stimulus_off',
                               'RecordingTimestamp': now_time()})
-        # letting the fixation point appear 0.5 second
-        core.wait(0.5)
 
-        # STEP 4 - TRIAL RESET  ANG LOGGING
-        win.flip()
+        # fixation to complete 3 seconds from the start of the trial
+        # calculate the time that has passed since the start of the trial
+        # and wait for the remaining time to complete 3 seconds
+
+        #win.flip()
+
         if color == DOMINANT:
             last_dominant = figure
             update = True
@@ -175,6 +188,8 @@ def main_loop(block_num):
                            'is_figure_change': figure_change,
                            'is_update': update,
                            'is_first': first_step,
+                           'pressed_key': pressed_key[0],
+                           'rt': time_passed,
                            'dominant': DOMINANT,
                            'block': f'b_{block_num}'})
         num += 1
