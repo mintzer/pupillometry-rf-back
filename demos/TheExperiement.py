@@ -14,18 +14,18 @@ global tracker
 
 # %%  Monitor/geometry
 
-subject = ' '
-COLORS = ['red', 'red', 'red', 'red']
+subject = '1 '
+COLORS = ['red'] #, 'red', 'red', 'red']
 #COLORS = ['blue', 'blue', 'blue', 'blue']
 
 #COLORS = ['blue', 'red']
 # number of blocks
-BLOCKS = 4
+BLOCKS = 1
 # NON_DOMINANT = 'red'
 # DOMINANT = 'blue'
 MY_MONITOR = 'testMonitor'  # needs to exists in PsychoPy monitor center
 FULLSCREEN = True
-SCREEN_RES = [1920, 1080]
+SCREEN_RES = [2560, 1440]
 SCREEN_WIDTH = 52.7  # cm
 VIEWING_DIST = 63  # distance from eye to center of screen (cm)
 LOG_FOLDER_PATH = r'logs/'

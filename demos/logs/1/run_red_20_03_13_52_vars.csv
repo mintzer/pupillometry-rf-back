@@ -1,0 +1,10 @@
+block,border_color,dominant,figure,is_color_change,is_figure_change,is_first,is_update,pressed_key,rt,trial_id,is_correct
+b_0,red,red,X,no_color_change,no_figure_change,first,update,x,2.9400198459625244,0,incorrect
+b_0,red,red,Y,no_color_change,figure_change,not_first,update,y,4.076009273529054,1,incorrect
+b_0,blue,red,Y,color_change,no_figure_change,not_first,no_update,y,0.969003677368164,2,incorrect
+b_0,blue,red,Y,no_color_change,no_figure_change,not_first,no_update,y,0.5670044422149658,3,incorrect
+b_0,blue,red,X,no_color_change,figure_change,not_first,no_update,x,0.5410013198852539,4,incorrect
+b_0,blue,red,Y,no_color_change,figure_change,not_first,no_update,y,0.5000116825103761,5,incorrect
+b_0,blue,red,Y,no_color_change,no_figure_change,not_first,no_update,y,0.45103573799133295,6,incorrect
+b_0,blue,red,X,no_color_change,figure_change,not_first,no_update,x,0.5550160408020021,7,incorrect
+b_0,blue,red,X,no_color_change,no_figure_change,not_first,no_update,x,0.5780010223388672,8,incorrect
