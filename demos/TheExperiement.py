@@ -14,7 +14,7 @@ global tracker
 
 # %%  Monitor/geometry
 
-subject = '1 '
+subject = '2'
 COLORS = ['red'] #, 'red', 'red', 'red']
 #COLORS = ['blue', 'blue', 'blue', 'blue']
 
@@ -25,7 +25,7 @@ BLOCKS = 1
 # DOMINANT = 'blue'
 MY_MONITOR = 'testMonitor'  # needs to exists in PsychoPy monitor center
 FULLSCREEN = True
-SCREEN_RES = [2560, 1440]
+SCREEN_RES = [1920, 1080] #[2560, 1440]
 SCREEN_WIDTH = 52.7  # cm
 VIEWING_DIST = 63  # distance from eye to center of screen (cm)
 LOG_FOLDER_PATH = r'logs/'
@@ -94,9 +94,10 @@ def main_loop(block_num):
                          f"תזכורת: בכל רגע נתון תצטרכי לזכור\n"
                          f"מה היא האות האחרונה\n"
                          f"שהופיעה בצבע "
-                         f"{heb_colors[DOMINANT]}"
-                         f"בנוסף, בכל צעד: אם האות שמופיעה על המסך היא X - לחצי על הכפתור Q\n"
-                         f"אם האות שמופיעה על המסך היא O - לחצי על הכפתור P\n"
+                         f"{heb_colors[DOMINANT]}\n\n"
+                         f"בנוסף, בכל צעד:\n"
+                         f"אם מופיעה האות X - לחצי על Q\n"
+                         f"אם מופיעה האות O - לחצי על P\n"
                          f"\n\nלחצי על כל כפתור כדי להמשיך",
                     languageStyle='RTL',
                     color=DOMINANT).draw()
@@ -118,8 +119,8 @@ def main_loop(block_num):
         figure = random.choice(['X','O'])
 
         if last_color != '':
-            # 2:1 ratio
-            color = random.choice(['blue', 'red', last_color])
+            # 5:3 ratio
+            color = random.choice(['blue', 'red', 'blue', 'red', 'blue', 'red', last_color, last_color])
         else:
             color = random.choice(['blue', 'red'])
         if num == 0:
@@ -191,16 +192,17 @@ def main_loop(block_num):
         if num >= 14:
             go = False
         update_log('vars', {'trial_id': str(num),
-                           'figure': figure,
-                           'border_color': color,
-                           'is_color_change': color_change,
-                           'is_figure_change': figure_change,
-                           'is_update': update,
-                           'is_first': first_step,
-                           'pressed_key': pressed_key[0],
-                           'rt': time_passed,
-                           'dominant': DOMINANT,
-                           'block': f'b_{block_num}'})
+                            'figure': figure,
+                            'border_color': color,
+                            'is_color_change': color_change,
+                            'is_figure_change': figure_change,
+                            'is_update': update,
+                            'is_first': first_step,
+                            'pressed_key': pressed_key[0],
+                            'is_correct_key': pressed_key[0] == keys_conversion[figure],
+                            'rt': time_passed,
+                            'dominant': DOMINANT,
+                            'block': f'b_{block_num}'})
         num += 1
         update_log('events',{
             'Event': 'TRIAL_END',
@@ -208,7 +210,7 @@ def main_loop(block_num):
 
     # STEP 5 - PROBE ( OUT OF LOOP)
     visual.TextStim(win, text=f"מה האות האחרונה שהופיעה ב"
-                              f"{heb_colors[DOMINANT]}?"
+                              f"{heb_colors[DOMINANT]}?\n"
                               f"אם X - לחצי Q\n"
                               f"אם O - לחצי P\n",
                     languageStyle='RTL', color=DOMINANT).draw()
@@ -251,6 +253,7 @@ def stop_and_save_logs():
     vars_df['is_figure_change'] = vars_df['is_figure_change'].map({True: 'figure_change', False: 'no_figure_change'})
     vars_df['is_update'] = vars_df['is_update'].map({True: 'update', False: 'no_update'})
     vars_df['is_first'] = vars_df['is_first'].map({True: 'first', False: 'not_first'})
+    vars_df['is_correct_key'] = vars_df['is_correct_key'].map({True: 'correct', False: 'incorrect'})
     vars_df.to_csv(main_path + '_vars.csv', sep=',', index = False)
     #df_msg.to_csv(settings.FILENAME + '_msg' + timestamp + '.csv', sep='\t')
     input_df['is_correct'] = input_df['is_correct'].map({True: 'correct', False: 'incorrect'})
@@ -267,6 +270,7 @@ def show_summary():
 def main():
     global tracker, fixation_point, win, start_time, DOMINANT, vars_df, events_df, input_df
     from pathlib import Path
+    experiment_start_time = time.time()
     Path(fr"logs/{subject}").mkdir(parents=True, exist_ok=True)
     for color in COLORS:
         vars_df = pd.DataFrame()
@@ -283,11 +287,12 @@ def main():
         DOMINANT = color
         visual.TextStim(win,
                        text=f"ברוכה הבאה! :)\n"
-                            f"הניסוי מורכב משתי הוראות פשוטות:\n"
-                            f"1. בכל שלב, תופיע על המסך אות אחת - X או O\n"
-                            f"הקישי על המקש המתאים במקלדת\n"
-                            f"אם הופיעה האות X - הקישי על המקש Q\n"
-                            f"אם הופיעה האות O - הקישי על המקש P\n\n"
+                            f"הניסוי מורכב משתי הוראות פשוטות:\n\n"
+                            f"1. בכל שלב תופיע על\n"
+                            f"המסך אות אחת: "
+                            f"X או O\n"
+                            f"אם הופיעה האות X - הקישי על Q\n"
+                            f"אם הופיעה האות O - הקישי על P\n\n"
                             f"2. החזיקי כל הזמן בראש מה\n"
                             f"הייתה האות האחרונה בצבע "
                             f"{heb_colors[DOMINANT]}\n\n"

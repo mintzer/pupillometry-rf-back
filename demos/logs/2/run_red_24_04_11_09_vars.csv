@@ -1,0 +1,16 @@
+block,border_color,dominant,figure,is_color_change,is_correct_key,is_figure_change,is_first,is_update,pressed_key,rt,trial_id,is_correct
+b_0,red,red,X,no_color_change,correct,no_figure_change,first,update,q,0.9880008697509766,0,correct
+b_0,blue,red,O,color_change,correct,figure_change,not_first,no_update,p,0.5200152397155762,1,correct
+b_0,blue,red,O,no_color_change,incorrect,no_figure_change,not_first,no_update,q,1.0210196971893308,2,correct
+b_0,blue,red,O,no_color_change,correct,no_figure_change,not_first,no_update,p,0.6830406188964844,3,correct
+b_0,blue,red,X,no_color_change,incorrect,figure_change,not_first,no_update,p,1.128000259399414,4,correct
+b_0,red,red,O,color_change,correct,figure_change,not_first,update,p,1.4379754066467283,5,correct
+b_0,blue,red,O,color_change,correct,no_figure_change,not_first,no_update,p,0.5940008163452148,6,correct
+b_0,red,red,O,color_change,correct,no_figure_change,not_first,update,p,0.9440135955810548,7,correct
+b_0,blue,red,O,color_change,correct,no_figure_change,not_first,no_update,p,0.5810074806213379,8,correct
+b_0,blue,red,O,no_color_change,correct,no_figure_change,not_first,no_update,p,0.5460140705108643,9,correct
+b_0,blue,red,X,no_color_change,correct,figure_change,not_first,no_update,q,0.6630175113677979,10,correct
+b_0,blue,red,X,no_color_change,correct,no_figure_change,not_first,no_update,q,0.4750211238861084,11,correct
+b_0,blue,red,X,no_color_change,correct,no_figure_change,not_first,no_update,q,0.6649978160858154,12,correct
+b_0,red,red,X,color_change,correct,no_figure_change,not_first,update,q,1.0300042629241943,13,correct
+b_0,red,red,X,no_color_change,correct,no_figure_change,not_first,update,q,0.5860011577606201,14,correct

@@ -1,0 +1,5 @@
+block,border_color,dominant,figure,is_color_change,is_figure_change,is_first,is_update,pressed_key,rt,trial_id,is_correct
+b_0,red,red,X,no_color_change,no_figure_change,first,update,q,0.8430120944976807,0,correct
+b_0,blue,red,O,color_change,figure_change,not_first,no_update,q,1.0480103492736816,1,correct
+b_0,red,red,O,color_change,no_figure_change,not_first,update,p,0.6300036907196045,2,correct
+b_0,red,red,X,no_color_change,figure_change,not_first,update,q,0.6589715480804443,3,correct
