@@ -31,6 +31,7 @@ VIEWING_DIST = 63  # distance from eye to center of screen (cm)
 LOG_FOLDER_PATH = r'logs/'
 heb_colors = {'red': 'אדום',
               'blue': 'כחול'}
+keys_conversion = {'x': 'q', 'X': 'q', 'o': 'p', 'O': 'p'}
 
 monitor_refresh_rate = 60  # frames per second (fps)
 mon = monitors.Monitor(MY_MONITOR)  # Defined in defaults file
@@ -88,7 +89,15 @@ def main_loop(block_num):
     global events_df, vars_df, start_time, fixation_point, win
     #prints text to the screen
     visual.TextStim(win,
-                    text=f"ברוכה הבאה לבלוק מספר {block_num + 1}!\nתזכורת: בכל רגע נתון תצטרכי לזכור\nמה היא האות האחרונה\nשהופיעה בצבע {heb_colors[DOMINANT]}\n\nלחצי על כל כפתור כדי להמשיך",
+                    text=f"ברוכה הבאה לבלוק מספר "
+                         f"{block_num + 1}!\n"
+                         f"תזכורת: בכל רגע נתון תצטרכי לזכור\n"
+                         f"מה היא האות האחרונה\n"
+                         f"שהופיעה בצבע "
+                         f"{heb_colors[DOMINANT]}"
+                         f"בנוסף, בכל צעד: אם האות שמופיעה על המסך היא X - לחצי על הכפתור Q\n"
+                         f"אם האות שמופיעה על המסך היא O - לחצי על הכפתור P\n"
+                         f"\n\nלחצי על כל כפתור כדי להמשיך",
                     languageStyle='RTL',
                     color=DOMINANT).draw()
     # updates the screen
@@ -106,11 +115,11 @@ def main_loop(block_num):
         first_step = False
         # DEFINE TASK PARAMETERS ---
         # randomly choosing figure
-        figure = random.choice(['X','Y'])
+        figure = random.choice(['X','O'])
 
         if last_color != '':
-            # 5:3 ratio
-            color = random.choice(['blue', 'red', 'blue', 'red', 'blue', 'red', last_color, last_color])
+            # 2:1 ratio
+            color = random.choice(['blue', 'red', last_color])
         else:
             color = random.choice(['blue', 'red'])
         if num == 0:
@@ -154,8 +163,8 @@ def main_loop(block_num):
         update_log('events', {'Event': '!E TRIAL_EVENT_VAR stimulus_on',
                               'RecordingTimestamp': now_time()})
 
-        # wait for the user to press X or Y
-        pressed_key = event.waitKeys(keyList=['x', 'y'])
+        # wait for the user to press q or p
+        pressed_key = event.waitKeys(keyList=['q', 'p'])
 
         #core.wait(2)
         fixation_point.draw()
@@ -198,16 +207,20 @@ def main_loop(block_num):
             'RecordingTimestamp': now_time()})
 
     # STEP 5 - PROBE ( OUT OF LOOP)
-    visual.TextStim(win, text=f"מה האות האחרונה שהופיעה ב{heb_colors[DOMINANT]}?", languageStyle='RTL', color=DOMINANT).draw()
+    visual.TextStim(win, text=f"מה האות האחרונה שהופיעה ב"
+                              f"{heb_colors[DOMINANT]}?"
+                              f"אם X - לחצי Q\n"
+                              f"אם O - לחצי P\n",
+                    languageStyle='RTL', color=DOMINANT).draw()
     # add input from user
     # drop block when user got wrong answer
     win.flip()
     key = event.waitKeys()[0] # waiting for input
     print(key)
-    print(str.lower(key) == str.lower(last_dominant))
+    print(str.lower(key) == keys_conversion[last_dominant])
     update_log('input', {'pressed_key': key,
                          'last_dominant': last_dominant,
-                        'is_correct': str.lower(key) == str.lower(last_dominant),
+                        'is_correct': str.lower(key) == keys_conversion[last_dominant],
                         'block': f'b_{block_num}'})
 
 def stop_and_save_logs():
@@ -269,7 +282,16 @@ def main():
         tracker.init()
         DOMINANT = color
         visual.TextStim(win,
-                       text=f"ברוכה הבאה! :)\nההוראה היא פשוטה ויחידה:\nלהחזיק כל הזמן בראש מה\nהייתה האות האחרונה בצבע {heb_colors[DOMINANT]}\n\nלחצי על כל כפתור כדי להמשיך",
+                       text=f"ברוכה הבאה! :)\n"
+                            f"הניסוי מורכב משתי הוראות פשוטות:\n"
+                            f"1. בכל שלב, תופיע על המסך אות אחת - X או O\n"
+                            f"הקישי על המקש המתאים במקלדת\n"
+                            f"אם הופיעה האות X - הקישי על המקש Q\n"
+                            f"אם הופיעה האות O - הקישי על המקש P\n\n"
+                            f"2. החזיקי כל הזמן בראש מה\n"
+                            f"הייתה האות האחרונה בצבע "
+                            f"{heb_colors[DOMINANT]}\n\n"
+                            f"לחצי על כל כפתור כדי להמשיך",
                        languageStyle='RTL', color=DOMINANT).draw()
         win.flip()
         event.waitKeys()
