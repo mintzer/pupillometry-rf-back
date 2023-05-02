@@ -153,7 +153,7 @@ def main_loop(block_num):
 
         # STEP 2 - DRAWING STIMULUS
         # record the start time of the trial
-        start_time = time.time()
+        trial_start_time = time.time()
 
         visual.TextStim(win,text=figure, color=color, height=4.5).draw()
         #visual.Rect(win, size=(4,4), lineColor=color).draw()
@@ -171,7 +171,7 @@ def main_loop(block_num):
         fixation_point.draw()
         # updates the screen
         win.flip()
-        time_passed = time.time() - start_time # in seconds
+        time_passed = time.time() - trial_start_time # in seconds
         time_left = 3.5 - time_passed
         core.wait(time_left)
         update_log('events', {'Event': '!E TRIAL_EVENT_VAR stimulus_off',
