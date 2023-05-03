@@ -14,13 +14,13 @@ global tracker
 
 # %%  Monitor/geometry
 
-subject = '2'
-COLORS = ['red'] #, 'red', 'red', 'red']
+subject = '3'
+COLORS = ['blue'] #, 'red', 'red', 'red']
 #COLORS = ['blue', 'blue', 'blue', 'blue']
 
 #COLORS = ['blue', 'red']
 # number of blocks
-BLOCKS = 1
+BLOCKS = 4
 # NON_DOMINANT = 'red'
 # DOMINANT = 'blue'
 MY_MONITOR = 'testMonitor'  # needs to exists in PsychoPy monitor center
