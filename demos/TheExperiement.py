@@ -14,7 +14,7 @@ global tracker
 
 # %%  Monitor/geometry
 
-subject = '3'
+subject = '4'
 COLORS = ['blue'] #, 'red', 'red', 'red']
 #COLORS = ['blue', 'blue', 'blue', 'blue']
 
@@ -41,7 +41,7 @@ mon.setSizePix(SCREEN_RES)
 #im_name = 'im1.jpeg'
 
 # %%  ET settings
-et_name = 'Tobii Pro X3-120' # EPU
+et_name = 'Tobii Pro X3-120 EPU'
 # et_name = 'IS4_Large_Peripheral'
 # et_name = 'Tobii Pro Nano'
 
